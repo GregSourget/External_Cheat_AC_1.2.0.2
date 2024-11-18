@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gsourget.bach2026\\Documents\\Cheat_AC_project\\",
-  "Documents": [],
+  "WorkspaceRootPath": "F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\CppProperties.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CppProperties.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\cheat\\cheat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cheat\\cheat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\cheat\\cheat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:cheat\\cheat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CppProperties.json",
+              "DocumentMoniker": "F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\CppProperties.json",
+              "RelativeDocumentMoniker": "CppProperties.json",
+              "ToolTip": "F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\CppProperties.json",
+              "RelativeToolTip": "CppProperties.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-18T09:37:11.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cheat.cpp",
+              "DocumentMoniker": "F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\cheat\\cheat.cpp",
+              "RelativeDocumentMoniker": "cheat\\cheat.cpp",
+              "ToolTip": "F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\cheat\\cheat.cpp",
+              "RelativeToolTip": "cheat\\cheat.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-18T09:36:04.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cheat.h",
+              "DocumentMoniker": "F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\cheat\\cheat.h",
+              "RelativeDocumentMoniker": "cheat\\cheat.h",
+              "ToolTip": "F:\\ESAIP\\S3\\C\u002B\u002B\\GitHub\\Cheat_AC_project\\cheat\\cheat.h",
+              "RelativeToolTip": "cheat\\cheat.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-18T09:33:41.723Z",
+              "EditorCaption": ""
             }
           ]
         }

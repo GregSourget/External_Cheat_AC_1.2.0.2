@@ -19,9 +19,15 @@ namespace cheat
 	void infammooff() noexcept;
 	extern bool isInfAmmoOn;
 
+
 	void norecoilon() noexcept;
 	void norecoiloff() noexcept;
 	extern bool isNoRecoilOn;
+
+	extern int updatedArmor;
+	void armoron() noexcept;
+	void armoroff() noexcept;
+	extern bool isArmorOn;
 
 	void getinfoon() noexcept;
 	extern bool isGetInfoOn;

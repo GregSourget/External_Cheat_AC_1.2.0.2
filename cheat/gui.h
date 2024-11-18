@@ -61,6 +61,11 @@ namespace gui
 	extern void norecoiloff() noexcept;
 	extern bool isNoRecoilOn;
 
+	extern void Armoron() noexcept;
+	extern void Armoroff() noexcept;
+	extern bool isArmorOn;
+	extern int updatedArmor;
+
 	extern void getinfoon() noexcept;
 	extern bool isGetInfoOn;
 	//extern int headValue;

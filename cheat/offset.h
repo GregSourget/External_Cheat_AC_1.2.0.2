@@ -20,7 +20,6 @@ constexpr auto m_vecOrigin = 0x28;
 constexpr auto vec3_head = 0x4;
 constexpr auto iTeamNum = 0x30C;
 constexpr auto dwViewMatrix = 0x501AE8;
-
 // ammo nade function recoil
 constexpr auto m_Nades = 0x158;
 constexpr auto m_Ammo = 0x150;

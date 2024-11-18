@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\cheat"
   ],
-  "SelectedNode": "\\cheat-menu.sln",
+  "SelectedNode": "\\cheat\\cheat.cpp",
   "PreviewInSolutionExplorer": false
 }
