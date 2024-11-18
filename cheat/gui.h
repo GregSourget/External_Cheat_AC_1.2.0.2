@@ -47,6 +47,11 @@ namespace gui
 	extern bool isGodModeOn;
 	extern int updatedHealth;
 
+	void infhealthon() noexcept;
+	void infhealthoff() noexcept;
+	extern bool isInfHealthOn;
+	extern int updatedHealth;
+
 	extern void infnadeon() noexcept;
 	extern void infnadeoff() noexcept;
 	extern bool isInfNadeOn;

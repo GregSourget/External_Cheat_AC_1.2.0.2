@@ -10,6 +10,7 @@ bool gui::isInfNadeOn = false;
 bool gui::isInfAmmoOn = false;
 bool gui::isNoRecoilOn = false;
 bool gui::isGetInfoOn = false;
+bool gui::isInfHealthOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
@@ -255,6 +256,14 @@ void gui::RenderTrainerTab() noexcept
 			cheat::godmodeon();
 		else
 			cheat::godmodeoff();
+	}
+
+	if (ImGui::Checkbox("Infinite Health##Checkbox", &isInfHealthOn))
+	{
+		if (isInfHealthOn)
+			cheat::infhealthon();
+		else
+			cheat::infhealthoff();
 	}
 
 	if (ImGui::Checkbox("Infinite Nade##Checkbox", &isInfNadeOn))

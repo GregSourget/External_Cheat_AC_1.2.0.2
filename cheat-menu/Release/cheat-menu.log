@@ -1,7 +1,38 @@
 ﻿  cheat.cpp
-  Génération de code en cours
-  16 of 1451 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
-  Fin de la génération du code
-  cheat-menu.vcxproj -> C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\Release\cheat-menu.exe
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(66,13): error C2601: 'cheat::infhealthon' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(90,13): error C2601: 'cheat::infhealthoff' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(105,13): error C2601: 'cheat::infnadeon' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(110,13): error C2601: 'cheat::infnadeoff' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(115,13): error C2601: 'cheat::infammoon' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(120,13): error C2601: 'cheat::infammooff' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(125,13): error C2601: 'cheat::norecoilon' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(130,13): error C2601: 'cheat::norecoiloff' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(136,13): error C2601: 'cheat::getinfoon' : définitions de fonctions locales non conformes
+      C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1):
+      cette ligne comporte un '{' qui n'est pas équilibré
+  
+C:\Users\cboudes.bach2026\Downloads\Cheat_AC_project\cheat\cheat.cpp(28,1): error C1075: '{' : jeton correspondant introuvable
