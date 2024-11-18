@@ -18,6 +18,7 @@ bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;  
 bool cheat::isGetInfoOn = false;
+bool cheat::isInfHealthOn = false;
 std::uintptr_t cheat::headPtr = 0;
 std::uintptr_t cheat::entityL = 0;
 std::uintptr_t cheat::entity = 0;
@@ -57,11 +58,49 @@ void cheat::godmodeoff() noexcept
     memory.Write<int>(healthAddress, initialHealth);
 }
 
+void cheat::infhealthon() noexcept
+{
+    if (isInfHealthOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto healthAddress = localPlayerPtr + m_iHealth;
+
+    initialHealth = memory.Read<int>(healthAddress);
+
+    isInfHealthOn = true;
+
+    while (isInfHealthOn) {
+        int currentHealth = memory.Read<int>(healthAddress);
+
+        if (currentHealth < 100) {
+            memory.Write<int>(healthAddress, 100);
+        }
+        Sleep(100);
+    }
+}
+
+void cheat::infhealthoff() noexcept
+{
+    if (!isInfHealthOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto healthAddress = localPlayerPtr + m_iHealth;
+
+    isInfHealthOn = false;
+
+    memory.Write<int>(healthAddress, initialHealth);
+}
+
 void cheat::infnadeon() noexcept 
 {
     
 }
-
 
 void cheat::infnadeoff() noexcept
 {
@@ -77,8 +116,6 @@ void cheat::infammooff() noexcept
 {
     
 }
-
-
 
 void cheat::norecoilon() noexcept 
 {
