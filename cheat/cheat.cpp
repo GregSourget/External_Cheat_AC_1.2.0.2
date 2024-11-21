@@ -164,20 +164,6 @@ void cheat::infammooff() noexcept
 
 void cheat::norecoilon() noexcept
 {
-    if (isNoRecoilOn)
-        return;
-
-    auto& memory = getMemory();
-    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
-    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
-    const auto recoilAddress = localPlayerPtr + m_recoil1;
-
-    //initialRecoil1 = memory.Read<int>(recoilAddress);
-
-    isNoRecoilOn = true;
-
-    int updatedRecoil = 0;
-    memory.Write<int>(recoilAddress, updatedRecoil);
 
 }
 
