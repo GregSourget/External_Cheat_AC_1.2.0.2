@@ -30,6 +30,7 @@ namespace cheat
 	extern bool isArmorOn;
 
 	void getinfoon() noexcept;
+	void getinfooff() noexcept;
 	extern bool isGetInfoOn;
 	extern std::uintptr_t headPtr; // Pour stocker les pointeurs vers les têtes des ennemis
 	extern std::uintptr_t entityL;

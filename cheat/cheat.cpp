@@ -218,3 +218,6 @@ void cheat::armoroff() noexcept {
 void cheat::getinfoon() noexcept {
 
 }
+void cheat::getinfooff() noexcept {
+
+}
