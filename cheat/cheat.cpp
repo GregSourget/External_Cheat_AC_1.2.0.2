@@ -42,9 +42,9 @@ void cheat::godmodeon() noexcept
         int currentHealth = memory.Read<int>(healthAddress);
 
         if (currentHealth < 9999) {
-            memory.Write<int>(healthAddress, 100);
+            memory.Write<int>(healthAddress, 9999);
         }
-        Sleep(10000000);
+        Sleep(100);
 }
 
 
@@ -81,7 +81,7 @@ void cheat::infhealthon() noexcept
         int currentHealth = memory.Read<int>(healthAddress);
 
         if (currentHealth < 9999) {
-            memory.Write<int>(healthAddress, 100);
+            memory.Write<int>(healthAddress, 9999);
         }
         Sleep(100);
     }

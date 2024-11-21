@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\",
+  "WorkspaceRootPath": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\cheat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\cheat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|solutionrelative:cheat\\cheat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|solutionrelative:cheat\\gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\gui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\gui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|solutionrelative:cheat\\gui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\cheat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\cheat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{5ED3C040-1930-43CE-BD5F-FB826AF63735}|cheat-menu.vcxproj|solutionrelative:cheat\\cheat.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -32,50 +32,47 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "gui.h",
-              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\gui.h",
+              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\gui.h",
               "RelativeDocumentMoniker": "cheat\\gui.h",
-              "ToolTip": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\gui.h",
+              "ToolTip": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\gui.h",
               "RelativeToolTip": "cheat\\gui.h",
               "ViewState": "AgIAADMAAAAAAAAAAAAAADEAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-18T10:28:17.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T10:28:17.72Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "gui.cpp",
-              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\gui.cpp",
+              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\gui.cpp",
               "RelativeDocumentMoniker": "cheat\\gui.cpp",
-              "ToolTip": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\gui.cpp",
+              "ToolTip": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\gui.cpp",
               "RelativeToolTip": "cheat\\gui.cpp",
               "ViewState": "AgIAANgAAAAAAAAAAAAAAAUBAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-18T10:27:45.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T10:27:45.958Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "cheat.h",
-              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\cheat.h",
+              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\cheat.h",
               "RelativeDocumentMoniker": "cheat\\cheat.h",
-              "ToolTip": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\cheat.h",
+              "ToolTip": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\cheat.h",
               "RelativeToolTip": "cheat\\cheat.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-11-18T09:52:20.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T09:52:20.185Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "cheat.cpp",
-              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\cheat.cpp",
+              "DocumentMoniker": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\cheat.cpp",
               "RelativeDocumentMoniker": "cheat\\cheat.cpp",
-              "ToolTip": "C:\\Users\\cboudes.bach2026\\Downloads\\Cheat_AC_project\\cheat\\cheat.cpp",
+              "ToolTip": "C:\\Users\\cboudes.bach2026\\Documents\\Cheat_AC_project\\cheat\\cheat.cpp",
               "RelativeToolTip": "cheat\\cheat.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAADgvysAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAFIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-18T09:41:16.199Z",
               "EditorCaption": ""
