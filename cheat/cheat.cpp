@@ -55,7 +55,6 @@ void cheat::godmodeon() noexcept
         }).detach();
 }
 
-
 void cheat::godmodeoff() noexcept
 {
     if (!isGodModeOn)
@@ -70,6 +69,7 @@ void cheat::godmodeoff() noexcept
 
     memory.Write<int>(healthAddress, initialHealth);
 }
+
 
 void cheat::infnadeon() noexcept
 {
@@ -100,7 +100,6 @@ void cheat::infnadeon() noexcept
         }).detach();
 }
 
-
 void cheat::infnadeoff() noexcept
 {
     if (!isInfNadeOn)
@@ -116,6 +115,7 @@ void cheat::infnadeoff() noexcept
     memory.Write<int>(nadeAddress, initialNade);
 
 }
+
 
 void cheat::infammoon() noexcept
 {
@@ -161,7 +161,6 @@ void cheat::infammooff() noexcept
 }
 
 
-
 void cheat::norecoilon() noexcept
 {
 
@@ -200,6 +199,7 @@ void cheat::armoron() noexcept {
         }).detach();
 
 }
+
 void cheat::armoroff() noexcept {
     if (!isArmorOn)
         return;
