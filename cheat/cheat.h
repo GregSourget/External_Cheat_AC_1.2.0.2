@@ -36,6 +36,11 @@ namespace cheat
 	extern std::uintptr_t entityL;
 	extern std::uintptr_t entity;
 	extern float headValue;
+
+	//extern int
+	//void wallhackon() noexcept;
+	//void wallhackoff() noexcept;
+	//extern bool isWallhackOn
 }
 
 
