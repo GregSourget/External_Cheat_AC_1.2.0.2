@@ -164,20 +164,6 @@ void cheat::infammooff() noexcept
 
 void cheat::norecoilon() noexcept
 {
-    if (isNoRecoilOn)
-        return;
-
-    auto& memory = getMemory();
-    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
-    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
-    const auto recoilAddress = localPlayerPtr + m_recoil1;
-
-    //initialRecoil1 = memory.Read<int>(recoilAddress);
-
-    isNoRecoilOn = true;
-
-    int updatedRecoil = 0;
-    memory.Write<int>(recoilAddress, updatedRecoil);
 
 }
 
@@ -201,8 +187,17 @@ void cheat::armoron() noexcept {
 
     isArmorOn = true;
 
-    int updatedArmor = 9999;
+    int updatedArmor = 250;
     memory.Write<int>(armorAddress, updatedArmor);
+    std::thread([armorAddress, &memory]() {
+        while (cheat::isArmorOn) {
+            int currentArmor = memory.Read<int>(armorAddress);
+            if (currentArmor < 250) {
+                memory.Write<int>(armorAddress, 250);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+        }).detach();
 
 }
 void cheat::armoroff() noexcept {

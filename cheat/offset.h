@@ -8,7 +8,7 @@ constexpr auto entityList = 0x10F4F8;
 
 constexpr auto m_iHealth = 0x0000F8;
 constexpr auto m_iName = 0x205;
-constexpr auto m_Armor = 0xF0;
+constexpr auto m_Armor = 0xFC;
 constexpr auto m_XCoord = 0x28;
 constexpr auto m_YCoord = 0x2C;
 constexpr auto m_ZCoord = 0x30;
