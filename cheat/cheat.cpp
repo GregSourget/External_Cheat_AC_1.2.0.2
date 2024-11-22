@@ -15,6 +15,7 @@ int cheat::updatedArmor = 0;
 int initialHealth = 0;
 int initialNade = 0;
 int initialAmmo = 0;
+int initialAmmoPistol = 0;
 int initialArmor = 0;
 bool cheat::isArmorOn = true;
 bool cheat::isNoRecoilOn = false; // check 
@@ -126,23 +127,30 @@ void cheat::infammoon() noexcept
     const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
     const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
     const auto ammoAddress = localPlayerPtr + m_Ammo;
+    const auto pistolAmmoAddress = localPlayerPtr + m_AmmoPistol;
 
     initialAmmo = memory.Read<int>(ammoAddress);
+    initialAmmoPistol = memory.Read<int>(pistolAmmoAddress);
 
     isInfAmmoOn = true;
 
-    int updatedAmmo = 20;
+    int updatedAmmo = 100;
     memory.Write<int>(ammoAddress, updatedAmmo);
+    memory.Write<int>(pistolAmmoAddress, updatedAmmo);
 
-    std::thread([ammoAddress, &memory]() {
+    std::thread([ammoAddress, pistolAmmoAddress, &memory]() {
         while (cheat::isInfAmmoOn) {
             int currentAmmo = memory.Read<int>(ammoAddress);
-            if (currentAmmo < 20) {
-                memory.Write<int>(ammoAddress, 20);
+            int currentPistolAmmo = memory.Read<int>(pistolAmmoAddress);
+            if (currentAmmo < 100) {
+                memory.Write<int>(ammoAddress, 100);
+            }
+            if (currentPistolAmmo < 100) {
+                memory.Write<int>(pistolAmmoAddress, 100);
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
-        }).detach();
+    }).detach();
 }
 
 void cheat::infammooff() noexcept
@@ -154,10 +162,12 @@ void cheat::infammooff() noexcept
     const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
     const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
     const auto ammoAddress = localPlayerPtr + m_Ammo;
+    const auto pistolAmmoAddress = localPlayerPtr + m_AmmoPistol;
 
     isInfAmmoOn = false;
 
     memory.Write<int>(ammoAddress, initialAmmo);
+    memory.Write<int>(pistolAmmoAddress, initialAmmoPistol);
 }
 
 
