@@ -11,6 +11,7 @@ bool gui::isInfAmmoOn = false;
 bool gui::isArmorOn = false;
 bool gui::isNoRecoilOn = false;
 bool gui::isGetInfoOn = false;
+bool gui::isSpeedHackOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
@@ -289,6 +290,14 @@ void gui::RenderTrainerTab() noexcept
 			cheat::armoron();
 		else
 			cheat::armoroff();
+	}
+
+	if (ImGui::Checkbox("Speed Hack##Checkbox", &isSpeedHackOn))
+	{
+		if (isSpeedHackOn)
+			cheat::speedhackon();
+		else
+			cheat::speedhackoff();
 	}
 }
 

@@ -17,12 +17,14 @@ int initialNade = 0;
 int initialAmmo = 0;
 int initialAmmoPistol = 0;
 int initialArmor = 0;
+int initialSpeed = 0;
 bool cheat::isArmorOn = true;
 bool cheat::isNoRecoilOn = false; // check 
 bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;
 bool cheat::isGetInfoOn = false;
+bool cheat::isSpeedHackOn = false;
 std::uintptr_t cheat::headPtr = 0;
 std::uintptr_t cheat::entityL = 0;
 std::uintptr_t cheat::entity = 0;
@@ -227,4 +229,47 @@ void cheat::armoroff() noexcept {
 
 void cheat::getinfoon() noexcept {
 
+}
+
+void cheat::speedhackon() noexcept {
+    if (isSpeedHackOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto speedhackAddress = localPlayerPtr + m_SpeedPlayer;
+
+    initialSpeed = memory.Read<int>(speedhackAddress);
+
+    isSpeedHackOn = true;
+
+    int updatedSpeed = -10;
+    memory.Write<int>(speedhackAddress, updatedSpeed);
+    
+    std::thread([speedhackAddress, &memory]() {
+        while (cheat::isSpeedHackOn) {
+            int currentSpeed = memory.Read<int>(speedhackAddress);
+            if (memory.Read<int>(m_isPosMoving) != 0) {
+                memory.Write<int>(speedhackAddress, -10);
+            } else {
+                memory.Write<int>(speedhackAddress, initialSpeed);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+    }).detach();
+}
+
+void cheat::speedhackoff() noexcept {
+    if (!isSpeedHackOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto speedhackAddress = localPlayerPtr + m_SpeedPlayer;
+
+    isSpeedHackOn = false;
+
+    memory.Write<int>(speedhackAddress, initialSpeed);
 }

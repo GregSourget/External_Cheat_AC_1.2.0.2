@@ -35,6 +35,9 @@ namespace cheat
 	extern std::uintptr_t entityL;
 	extern std::uintptr_t entity;
 	extern float headValue;
+
+	extern int updatedSpeed;
+	void speedhackon() noexcept;
+	void speedhackoff() noexcept;
+	extern bool isSpeedHackOn;
 }
-
-

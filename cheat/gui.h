@@ -69,4 +69,9 @@ namespace gui
 	extern void getinfoon() noexcept;
 	extern bool isGetInfoOn;
 	//extern int headValue;
+
+	void speedhackon() noexcept;
+	void speedhackoff() noexcept;
+	extern bool isSpeedHackOn;
+	extern int updatedSpeed;
 }
