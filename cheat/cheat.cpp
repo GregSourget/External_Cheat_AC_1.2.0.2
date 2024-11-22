@@ -18,7 +18,7 @@ int initialAmmo = 0;
 int initialAmmoPistol = 0;
 int initialArmor = 0;
 int initialSpeed = 0;
-bool cheat::isArmorOn = true;
+bool cheat::isArmorOn = false;
 bool cheat::isNoRecoilOn = false; // check 
 bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
@@ -244,14 +244,14 @@ void cheat::speedhackon() noexcept {
 
     isSpeedHackOn = true;
 
-    int updatedSpeed = -10;
+    int updatedSpeed = 3;
     memory.Write<int>(speedhackAddress, updatedSpeed);
     
     std::thread([speedhackAddress, &memory]() {
         while (cheat::isSpeedHackOn) {
             int currentSpeed = memory.Read<int>(speedhackAddress);
-            if (memory.Read<int>(m_isPosMoving) != 0) {
-                memory.Write<int>(speedhackAddress, -10);
+            if (memory.Read<int>(m_isPosMoving) != 1) {
+                memory.Write<int>(speedhackAddress, 3);
             } else {
                 memory.Write<int>(speedhackAddress, initialSpeed);
             }
