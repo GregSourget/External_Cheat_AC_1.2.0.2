@@ -18,13 +18,15 @@ int initialAmmo = 0;
 int initialAmmoPistol = 0;
 int initialArmor = 0;
 int initialSpeed = 0;
-bool cheat::isArmorOn = true;
+int initialFire = 0;
+bool cheat::isArmorOn = false;
 bool cheat::isNoRecoilOn = false; // check 
 bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;
 bool cheat::isGetInfoOn = false;
 bool cheat::isSpeedHackOn = false;
+bool cheat::isRapidFireOn = false;
 std::uintptr_t cheat::headPtr = 0;
 std::uintptr_t cheat::entityL = 0;
 std::uintptr_t cheat::entity = 0;
@@ -231,6 +233,7 @@ void cheat::getinfoon() noexcept {
 
 }
 
+
 void cheat::speedhackon() noexcept {
     if (isSpeedHackOn)
         return;
@@ -244,20 +247,9 @@ void cheat::speedhackon() noexcept {
 
     isSpeedHackOn = true;
 
-    int updatedSpeed = -10;
-    memory.Write<int>(speedhackAddress, updatedSpeed);
-    
-    std::thread([speedhackAddress, &memory]() {
-        while (cheat::isSpeedHackOn) {
-            int currentSpeed = memory.Read<int>(speedhackAddress);
-            if (memory.Read<int>(m_isPosMoving) != 0) {
-                memory.Write<int>(speedhackAddress, -10);
-            } else {
-                memory.Write<int>(speedhackAddress, initialSpeed);
-            }
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-        }
-    }).detach();
+    int updatedSpeed = 5;
+    memory.Write<int>(speedhackAddress, speedhackAddress*2);
+
 }
 
 void cheat::speedhackoff() noexcept {
@@ -272,4 +264,46 @@ void cheat::speedhackoff() noexcept {
     isSpeedHackOn = false;
 
     memory.Write<int>(speedhackAddress, initialSpeed);
+}
+
+void cheat::rapidfireon() noexcept {
+
+    if (isRapidFireOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto fireAddress = localPlayerPtr + m_RapidFire;
+
+    int initialFire = memory.Read<int>(fireAddress);
+
+    isRapidFireOn = true;
+
+    int updatedFire = 10;
+    memory.Write<int>(fireAddress, updatedFire);
+
+    std::thread([fireAddress, &memory]() {
+        while (cheat::isInfAmmoOn) {
+            int currentFire = memory.Read<int>(fireAddress);
+            if (currentFire < 20) {
+                memory.Write<int>(fireAddress, 20);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(20));
+        }
+        }).detach();
+}
+
+void cheat::rapidfireoff() noexcept {
+    if (!isRapidFireOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto fireAddress = localPlayerPtr + m_RapidFire;
+
+    isSpeedHackOn = false;
+
+    memory.Write<int>(fireAddress, initialFire);
 }

@@ -40,4 +40,9 @@ namespace cheat
 	void speedhackon() noexcept;
 	void speedhackoff() noexcept;
 	extern bool isSpeedHackOn;
+
+	extern int updatedFire;
+	void rapidfireon() noexcept;
+	void rapidfireoff() noexcept;
+	extern bool isRapidFireOn;
 }

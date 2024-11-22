@@ -12,6 +12,7 @@ bool gui::isArmorOn = false;
 bool gui::isNoRecoilOn = false;
 bool gui::isGetInfoOn = false;
 bool gui::isSpeedHackOn = false;
+bool gui::isRapidFireOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
@@ -298,6 +299,14 @@ void gui::RenderTrainerTab() noexcept
 			cheat::speedhackon();
 		else
 			cheat::speedhackoff();
+	}
+
+	if (ImGui::Checkbox("Rapid Fire##Checkbox", &isRapidFireOn))
+	{
+		if (isRapidFireOn)
+			cheat::rapidfireon();
+		else
+			cheat::rapidfireoff();
 	}
 }
 

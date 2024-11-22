@@ -74,4 +74,9 @@ namespace gui
 	void speedhackoff() noexcept;
 	extern bool isSpeedHackOn;
 	extern int updatedSpeed;
+
+	void rapidfireon() noexcept;
+	void rapidfireoff() noexcept;
+	extern bool isRapidFireOn;
+	extern int updatedFire;
 }
