@@ -8,7 +8,6 @@ namespace cheat
 	void godmodeoff() noexcept;
 	extern bool isGodModeOn;
 	
-
 	extern int updatedNade;
 	void infnadeon() noexcept;
 	void infnadeoff() noexcept;
@@ -18,7 +17,6 @@ namespace cheat
 	void infammoon() noexcept;
 	void infammooff() noexcept;
 	extern bool isInfAmmoOn;
-
 
 	void norecoilon() noexcept;
 	void norecoiloff() noexcept;
@@ -37,10 +35,9 @@ namespace cheat
 	extern std::uintptr_t entity;
 	extern float headValue;
 
-	//extern int
-	//void wallhackon() noexcept;
-	//void wallhackoff() noexcept;
-	//extern bool isWallhackOn
+	void wallhackon() noexcept;
+	void wallhackoff() noexcept;
+	extern bool isWallHackOn;
 }
 
 

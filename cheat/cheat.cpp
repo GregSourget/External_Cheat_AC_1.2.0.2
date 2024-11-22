@@ -218,6 +218,19 @@ void cheat::armoroff() noexcept {
 void cheat::getinfoon() noexcept {
 
 }
+
 void cheat::getinfooff() noexcept {
+
+}
+
+void cheat::wallhackon() noexcept {
+    if (isWallHackOn)
+        return;
+
+}
+
+void cheat::wallhackoff() noexcept {
+    if (!isWallHackOn)
+        return;
 
 }

@@ -57,6 +57,10 @@ namespace gui
 	extern bool isInfAmmoOn;
 	extern int updatedAmmo;
 
+	extern void wallhackon() noexcept;
+	extern void wallhackoff() noexcept;
+	extern bool isWallHackOn;
+
 	extern void norecoilon() noexcept;
 	extern void norecoiloff() noexcept;
 	extern bool isNoRecoilOn;
