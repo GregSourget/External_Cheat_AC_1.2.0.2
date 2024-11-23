@@ -12,6 +12,7 @@ int cheat::updatedHealth = 100; //initalisation
 int cheat::updatedNade = 0;
 int cheat::updatedAmmo = 20;
 int cheat::updatedArmor = 0;
+int cheat::updatedFire = 0;
 int initialHealth = 0;
 int initialNade = 0;
 int initialAmmo = 0;
@@ -276,22 +277,13 @@ void cheat::rapidfireon() noexcept {
     const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
     const auto fireAddress = localPlayerPtr + m_RapidFire;
 
-    int initialFire = memory.Read<int>(fireAddress);
+    initialFire = memory.Read<int>(fireAddress);
 
     isRapidFireOn = true;
 
-    int updatedFire = 10;
+    int updatedFire = 1988823685;
     memory.Write<int>(fireAddress, updatedFire);
 
-    std::thread([fireAddress, &memory]() {
-        while (cheat::isInfAmmoOn) {
-            int currentFire = memory.Read<int>(fireAddress);
-            if (currentFire < 20) {
-                memory.Write<int>(fireAddress, 20);
-            }
-            std::this_thread::sleep_for(std::chrono::milliseconds(20));
-        }
-        }).detach();
 }
 
 void cheat::rapidfireoff() noexcept {
@@ -303,7 +295,9 @@ void cheat::rapidfireoff() noexcept {
     const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
     const auto fireAddress = localPlayerPtr + m_RapidFire;
 
-    isSpeedHackOn = false;
+
+    initialFire = memory.Read<int>(fireAddress);
+    isRapidFireOn = false;
 
     memory.Write<int>(fireAddress, initialFire);
 }
