@@ -4,7 +4,8 @@
 
 // Lists
 constexpr auto localPlayer = 0x109B74;
-// player base
+// essayer de trouver la table des vecteurs relatif au joueur (matrice)
+// situé avant la base player 
 constexpr auto entityList = 0x10F4F8;
 
 constexpr auto m_iHealth = 0x0000F8;
