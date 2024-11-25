@@ -17,6 +17,7 @@ constexpr auto m_ViewAngleHeight = 0x38;
 constexpr auto m_iShotAmount = 0x180;
 constexpr auto m_SpeedPlayer = 0x80;
 constexpr auto m_isPosMoving = 0x70;
+constexpr auto m_velocity = 0x10;
 
 constexpr auto m_vecOrigin = 0x28;
 constexpr auto vec3_head = 0x4;
