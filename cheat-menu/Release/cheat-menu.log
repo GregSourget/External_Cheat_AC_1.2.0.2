@@ -1,5 +1,8 @@
-﻿  gui.cpp
+﻿  cheat.cpp
+  gui.cpp
+  main.cpp
 D:\Programmation\c++\Cheat_AC_project\cheat\gui.cpp(14,11): error C2374: 'gui::isArmorOn' : redéfinition ; initialisation multiple
       D:\Programmation\c++\Cheat_AC_project\cheat\gui.cpp(11,11):
       voir la déclaration de 'gui::isArmorOn'
   
+  memory.cpp
