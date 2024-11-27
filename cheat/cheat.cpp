@@ -243,6 +243,6 @@ void cheat::noclipon() noexcept {
 
 }
 
-void cheat::noclipoffn() noexcept {
+void cheat::noclipoff() noexcept {
 
 }
