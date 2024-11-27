@@ -16,6 +16,8 @@ constexpr auto m_ViewangleWidth = 0x34;
 constexpr auto m_ViewAngleHeight = 0x38;
 constexpr auto m_iShotAmount = 0x180;
 
+constexpr auto moveInstruction = 0x58D48;
+
 constexpr auto m_vecOrigin = 0x28;
 constexpr auto vec3_head = 0x4;
 constexpr auto iTeamNum = 0x30C;
@@ -30,3 +32,12 @@ constexpr auto m_recoil1 = 0x63786;
 // Hacks
 constexpr auto rapidFire = 0x164;
 
+//"ac_client.exe"+109B74+34 = position
+//""""+40 viewangles
+//""""+58D48 move character instruction
+
+//origin bytes
+//8C C0
+
+//new bytes
+// 90 90

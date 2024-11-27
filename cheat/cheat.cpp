@@ -230,6 +230,16 @@ void cheat::getinfoon() noexcept {
 }
 
 void cheat::noclipon() noexcept {
+    if (isNoClipOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto playerPosition = localPlayerPtr + m_XCoord; //xyz player
+    const auto viewAngles = localPlayerPtr + m_ViewangleWidth; // adress viewAngles
+    const auto moveInstructionValue = moduleBase + moveInstruction;  // on lit pas la vlauer c'est le pointeur l'adresse des instructionsdu joueur mouvements clique etc
+
 
 }
 
