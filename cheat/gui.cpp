@@ -315,9 +315,9 @@ void gui::RenderESPTab() noexcept
 	if (ImGui::Checkbox("WallHack##Checkbox", &isWallHackOn))
 	{
 		if (isWallHackOn)
-			cheat::wallhackon();
+			cheat::armoron();
 		else
-			cheat::wallhackoff();
+			cheat::armoroff();
 	}
 }
 
