@@ -1,7 +1,0 @@
-offset health : ES8
-offset armor 
-
-player base : 0x109B4/0x/509B74
-
-Je vais essayer de trouver le Player Base Pointer, qui correspond a l'objet de notre joueur,
-On peut y trouver les infos comme la vie la position les munitions ect
