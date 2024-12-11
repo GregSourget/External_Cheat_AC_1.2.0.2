@@ -274,8 +274,8 @@ void cheat::rapidfireon() noexcept {
 
     auto& memory = getMemory();
     const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
-    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
-    const auto fireAddress = localPlayerPtr + m_RapidFire;
+    const auto entityListPtr = memory.Read<std::uintptr_t>(moduleBase + entityList);
+    const auto fireAddress = entityListPtr + rapidFire;
 
     initialFire = memory.Read<int>(fireAddress);
 
@@ -283,21 +283,20 @@ void cheat::rapidfireon() noexcept {
 
     int updatedFire = 1988823685;
     memory.Write<int>(fireAddress, updatedFire);
-
 }
 
+
 void cheat::rapidfireoff() noexcept {
-    if (!isRapidFireOn)
-        return;
+    
+        if (!isRapidFireOn)
+            return;
 
-    auto& memory = getMemory();
-    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
-    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
-    const auto fireAddress = localPlayerPtr + m_RapidFire;
+        auto& memory = getMemory();
+        const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+        const auto entityListPtr = memory.Read<std::uintptr_t>(moduleBase + entityList);
+        const auto fireAddress = entityListPtr + rapidFire;
 
+        isRapidFireOn = false;
 
-    initialFire = memory.Read<int>(fireAddress);
-    isRapidFireOn = false;
-
-    memory.Write<int>(fireAddress, initialFire);
+        memory.Write<int>(fireAddress, initialFire);
 }
