@@ -17,6 +17,7 @@ constexpr auto m_ViewAngleHeight = 0x38;
 constexpr auto m_iShotAmount = 0x180;
 constexpr auto m_SpeedPlayer = 0x80;
 constexpr auto m_isPosMoving = 0x70;
+constexpr auto m_iTeam = 0x10; //a verifier
 
 constexpr auto m_vecOrigin = 0x28;
 constexpr auto vec3_head = 0x4;
@@ -31,3 +32,9 @@ constexpr auto rapidFire = 0x4637E4;
 
 
 
+//aimbot offset
+constexpr int headPos = 0x04;
+constexpr int footPos = 0x34;
+constexpr int yaw = 0x40;
+constexpr int pitch = 0x44;
+constexpr int team = 0x032C;
