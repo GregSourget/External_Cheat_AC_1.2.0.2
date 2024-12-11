@@ -17,6 +17,7 @@ int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
 int gui::updatedArmor = 0;
+int gui::updatedFire = 0;
 Memory memory("ac_client.exe");
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(
@@ -301,7 +302,7 @@ void gui::RenderTrainerTab() noexcept
 			cheat::speedhackoff();
 	}
 
-	if (ImGui::Checkbox("Rapid Fire##Checkbox", &isRapidFireOn))
+		if (ImGui::Checkbox("fire##Checkbox", &isRapidFireOn))
 	{
 		if (isRapidFireOn)
 			cheat::rapidfireon();
@@ -312,7 +313,7 @@ void gui::RenderTrainerTab() noexcept
 
 void gui::RenderAimbotTab() noexcept {
 	if (ImGui::Checkbox("Show Info##Checkbox", &cheat::isGetInfoOn)) {
-		// Pas besoin de condition supplÈmentaire ici si getinfoon gËre dÈj‡ isGetInfoOn
+		// Pas besoin de condition suppl√©mentaire ici si getinfoon g√®re d√©j√† isGetInfoOn
 	}
 
 	if (cheat::isGetInfoOn) {
