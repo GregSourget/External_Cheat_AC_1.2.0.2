@@ -259,14 +259,14 @@ void cheat::speedhackon() noexcept {
         while (cheat::isSpeedHackOn) {
             int currentSpeed = memory.Read<int>(speedhackAddress);
 			int currentVelocity = memory.Read<int>(velocityAddress);
-            if (currentVelocity == 0) {
+            /*if (currentVelocity == 0) {
                 memory.Write<int>(velocityAddress, velocityAddress * 2);
 				
             } else {
                 memory.Write<int>(velocityAddress,velocityAddress * 2);
 
             }
-            std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+            std::this_thread::sleep_for(std::chrono::milliseconds(1000));*/
         }
     }).detach();
 }
