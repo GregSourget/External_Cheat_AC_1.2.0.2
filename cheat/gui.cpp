@@ -309,6 +309,14 @@ void gui::RenderTrainerTab() noexcept
 		else
 			cheat::rapidfireoff();
 	}
+
+		if (ImGui::Checkbox("Aimbot##Checkbox", &cheat::Isaimboton))
+		{
+			if (cheat::Isaimboton)
+				cheat::aimboton();
+			else
+				cheat::aimbotoff();
+		}
 }
 
 void gui::RenderAimbotTab() noexcept {

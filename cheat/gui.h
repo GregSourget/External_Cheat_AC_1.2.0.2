@@ -79,4 +79,8 @@ namespace gui
 	void rapidfireoff() noexcept;
 	extern bool isRapidFireOn;
 	extern int updatedFire;
+
+	void aimboton() noexcept;
+	void aimbotoff() noexcept;
+	extern bool Isaimboton;
 }

@@ -13,6 +13,8 @@ int cheat::updatedNade = 0;
 int cheat::updatedAmmo = 20;
 int cheat::updatedArmor = 0;
 int cheat::updatedFire = 0;
+float cheat::updatedYaw = 0;
+float cheat::updatedPitch = 0;
 int initialHealth = 0;
 int initialNade = 0;
 int initialAmmo = 0;
@@ -20,6 +22,8 @@ int initialAmmoPistol = 0;
 int initialArmor = 0;
 int initialSpeed = 0;
 int initialFire = 0;
+float initialYaw = 0;
+float initialPitch = 0;
 bool cheat::isArmorOn = false;
 bool cheat::isNoRecoilOn = false; // check 
 bool cheat::isInfNadeOn = false;
@@ -28,6 +32,7 @@ bool cheat::isGodModeOn = false;
 bool cheat::isGetInfoOn = false;
 bool cheat::isSpeedHackOn = false;
 bool cheat::isRapidFireOn = false;
+bool cheat::Isaimboton = false;
 std::uintptr_t cheat::headPtr = 0;
 std::uintptr_t cheat::entityL = 0;
 std::uintptr_t cheat::entity = 0;
@@ -299,4 +304,96 @@ void cheat::rapidfireoff() noexcept {
         isRapidFireOn = false;
 
         memory.Write<int>(fireAddress, initialFire);
+}
+
+
+
+void cheat::aimboton() noexcept {
+	if (Isaimboton)
+		return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto entityListPtr = memory.Read<std::uintptr_t>(moduleBase + entityList);
+    const auto yAddress = entityListPtr + yaw;
+	const auto xAddress = entityListPtr + pitch;
+    
+
+    std::cout << "yaw address:" << yAddress << std::endl;
+	std::cout << "pitch address: " << xAddress << std::endl;
+    initialYaw = memory.Read<float>(static_cast<std::uintptr_t>(yAddress));
+    initialPitch = memory.Read<float>(static_cast<std::uintptr_t>(xAddress));
+    
+
+
+    Isaimboton = true;
+
+    float updatedYaw = 200;
+	float updatedPitch = 90;
+    memory.Write<float>(static_cast<std::uintptr_t>(yAddress), updatedYaw);
+    memory.Write<float>(static_cast<std::uintptr_t>(xAddress), updatedPitch);
+
+}
+/*
+void cheat::aimboton() noexcept {
+    if (Isaimboton)
+        return;
+
+    auto& memory = getMemory();
+
+    // Étape 1 : Récupérer l'adresse du module
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    if (moduleBase == 0) {
+        std::cerr << "[Erreur] Impossible de récupérer l'adresse du module ac_client.exe" << std::endl;
+        return;
+    }
+    std::cout << "[Info] Adresse de base du module : " << std::hex << moduleBase << std::endl;
+
+    // Étape 2 : Lire l'adresse de la liste des entités
+    const auto entityListPtr = memory.Read<std::uintptr_t>(moduleBase + entityList);
+    if (entityListPtr == 0) {
+        std::cerr << "[Erreur] Impossible de lire entityListPtr." << std::endl;
+        return;
+    }
+    std::cout << "[Info] Adresse de entityListPtr : " << std::hex << entityListPtr << std::endl;
+
+    // Étape 3 : Calculer les adresses yaw et pitch
+    const auto yAddress = entityListPtr + yaw;
+    const auto xAddress = entityListPtr + pitch;
+    std::cout << "[Info] Adresse yaw : " << std::hex << yAddress << std::endl;
+    std::cout << "[Info] Adresse pitch : " << std::hex << xAddress << std::endl;
+
+    // Étape 4 : Lire les valeurs initiales
+    initialYaw = memory.Read<float>(static_cast<std::uintptr_t>(yAddress));
+    initialPitch = memory.Read<float>(static_cast<std::uintptr_t>(xAddress));
+    if (initialYaw == 0.0f && initialPitch == 0.0f) {
+        std::cerr << "[Avertissement] Les valeurs initiales yaw et pitch sont nulles." << std::endl;
+    }
+    std::cout << "[Info] Valeur initiale yaw : " << initialYaw << std::endl;
+    std::cout << "[Info] Valeur initiale pitch : " << initialPitch << std::endl;
+
+    // Indique que l'aimbot est actif
+    Isaimboton = true;
+
+    // Étape 5 : Écrire les nouvelles valeurs
+    float updatedYaw = 200.0f;
+    float updatedPitch = 90.0f;
+
+    if (memory.Write<float>(static_cast<std::uintptr_t>(yAddress), updatedYaw), false) {
+        std::cerr << "[Erreur] Échec de l'écriture de updatedYaw." << std::endl;
+        return;
+    }
+    if (memory.Write<float>(static_cast<std::uintptr_t>(xAddress), updatedPitch), false) {
+        std::cerr << "[Erreur] Échec de l'écriture de updatedPitch." << std::endl;
+        return;
+    }
+
+
+    std::cout << "[Succès] Nouvelles valeurs écrites : Yaw = " << updatedYaw << ", Pitch = " << updatedPitch << std::endl;
+}*/
+
+
+void cheat::aimbotoff() noexcept {
+	if (!Isaimboton)
+		return;
 }

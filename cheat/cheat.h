@@ -45,4 +45,12 @@ namespace cheat
 	void rapidfireon() noexcept;
 	void rapidfireoff() noexcept;
 	extern bool isRapidFireOn;
+
+
+
+	extern float updatedYaw;
+	extern float updatedPitch;
+	void aimboton() noexcept;
+	void aimbotoff() noexcept;
+	extern bool Isaimboton;
 }
