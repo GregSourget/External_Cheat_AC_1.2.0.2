@@ -1,7 +1,7 @@
 ﻿  cheat.cpp
-  Génération de code en cours
-  3 of 1549 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    23 functions had inline decision re-evaluated but remain unchanged
-  Fin de la génération du code
-  cheat-menu.vcxproj -> C:\Users\profile1\Documents\Programmation\Cheat_AC_project\Release\cheat-menu.exe
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\offset.h(37,1): error C2144: erreur de syntaxe : 'auto' doit être précédé de ';'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\offset.h(37,16): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/cheat.cpp')
+  

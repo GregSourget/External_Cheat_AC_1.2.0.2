@@ -28,8 +28,9 @@ constexpr auto m_Nades = 0x158;
 constexpr auto m_Ammo = 0x150;
 constexpr auto m_AmmoPistol = 0x13C;
 constexpr auto m_recoil1 = 0x63786;
+constexpr auto m_recoil2 = 0x6378E
 
-// 4 63786
+// recoil  4 63786
 // 4 6378E
 
 // Hacks

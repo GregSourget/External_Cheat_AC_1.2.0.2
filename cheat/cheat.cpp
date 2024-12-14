@@ -6,6 +6,7 @@
 #include "../cheat/memory.h"
 #include "../cheat/cheat.h"
 #include <thread>
+#include <Windows.h>
 
 
 int cheat::updatedHealth = 100; //initalisation
@@ -174,11 +175,20 @@ void cheat::infammooff() noexcept
 
 void cheat::norecoilon() noexcept
 {
+   /* if (!isNoRecoilOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto startrecoiladdress = modulBase + m_recoilstart;*/
 
 }
 
 void cheat::norecoiloff() noexcept
 {
+    /*if (isNoRecoilOn)
+        return;*/
+
 
 }
 
