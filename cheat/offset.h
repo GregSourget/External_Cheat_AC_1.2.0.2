@@ -2,7 +2,7 @@
 
 #include <stdint.h>
 
-// Joueur
+// Lists
 constexpr auto localPlayer = 0x109B74;
 constexpr auto entityList = 0x10F4F8;
 
@@ -15,25 +15,26 @@ constexpr auto m_ZCoord = 0x30;
 constexpr auto m_ViewangleWidth = 0x34;
 constexpr auto m_ViewAngleHeight = 0x38;
 constexpr auto m_iShotAmount = 0x180;
-constexpr auto m_Kills = 0x1FC;
-constexpr auto m_team = 0x32C;
 
 constexpr auto m_vecOrigin = 0x28;
 constexpr auto vec3_head = 0x4;
 constexpr auto iTeamNum = 0x30C;
 constexpr auto dwViewMatrix = 0x501AE8;
-
-// weapon
+// ammo nade function recoil
 constexpr auto m_Nades = 0x158;
 constexpr auto m_Ammo = 0x150;
 constexpr auto m_AmmoPistol = 0x13C;
-constexpr auto m_recoil1 = 0x463786;
-constexpr auto m_recoil2 = 0x46378E;
+constexpr auto m_recoil1 = 0x63786;
 
-// recoil  4 63786
-// 4 6378E
+
+//recoil ac_client.exe+63786 - 50                    - push eax
+//ac_client.exe + 63787 - 8D 4C 24 1C - lea ecx, [esp + 1C]
+//ac_client.exe + 6378B - 51 - push ecx
+//ac_client.exe + 6378C - 8B CE - mov ecx, esi
+//ac_client.exe + 6378E - FF D2 - call edx
+
+
 
 // Hacks
 constexpr auto rapidFire = 0x164;
-
 
