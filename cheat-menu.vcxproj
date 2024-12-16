@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cheat\cheat.h" />
+    <ClInclude Include="cheat\entities.h" />
     <ClInclude Include="cheat\gui.h" />
     <ClInclude Include="cheat\memory.h" />
     <ClInclude Include="cheat\offset.h" />
@@ -154,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cheat\cheat.cpp" />
+    <ClCompile Include="cheat\entities.cpp" />
     <ClCompile Include="cheat\gui.cpp" />
     <ClCompile Include="cheat\main.cpp" />
     <ClCompile Include="cheat\memory.cpp" />

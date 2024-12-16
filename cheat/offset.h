@@ -20,6 +20,7 @@ constexpr auto m_vecOrigin = 0x28;
 constexpr auto vec3_head = 0x4;
 constexpr auto iTeamNum = 0x30C;
 constexpr auto dwViewMatrix = 0x501AE8;
+//ptr view matrix 17F00
 // ammo nade function recoil
 constexpr auto m_Nades = 0x158;
 constexpr auto m_Ammo = 0x150;
@@ -32,8 +33,9 @@ constexpr auto m_recoil1 = 0x63786;
 //ac_client.exe + 6378B - 51 - push ecx
 //ac_client.exe + 6378C - 8B CE - mov ecx, esi
 //ac_client.exe + 6378E - FF D2 - call edx
+//entitylist + 4 pour un joueur
 
-
+/
 
 // Hacks
 constexpr auto rapidFire = 0x164;
