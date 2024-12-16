@@ -21,7 +21,5 @@ public:
 	vec3d_f position_head;
 	vec3d_f position_feet;
 	int team;
-
-	void Print();
 };
 
