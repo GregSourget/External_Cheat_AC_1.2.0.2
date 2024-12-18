@@ -94,7 +94,7 @@ void cheat::infnadeon() noexcept
         while (cheat::isInfNadeOn) {
             int currentNade = memory.Read<int>(nadeAddress);
             if (currentNade == 0) {
-                memory.Write<int>(nadeAddress, 1);
+                memory.Write<int>(nadeAddress, 1);   
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
