@@ -1,4 +1,4 @@
-#include "gui.h"
+Ôªø#include "gui.h"
 #include "cheat.h"
 #include "memory.h"
 #include "../imgui/imgui.h"
@@ -294,7 +294,7 @@ void gui::RenderTrainerTab() noexcept
 
 void gui::RenderAimbotTab() noexcept {
 	if (ImGui::Checkbox("Show Info##Checkbox", &cheat::isGetInfoOn)) {
-		// Pas besoin de condition supplÈmentaire ici si getinfoon gËre dÈj‡ isGetInfoOn
+		// Pas besoin de condition suppl√©mentaire ici si getinfoon g√®re d√©j√† isGetInfoOn
 	}
 
 	if (cheat::isGetInfoOn) {
