@@ -7,7 +7,7 @@ namespace cheat
 	void godmodeon() noexcept;
 	void godmodeoff() noexcept;
 	extern bool isGodModeOn;
-	
+
 
 	extern int updatedNade;
 	void infnadeon() noexcept;

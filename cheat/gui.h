@@ -34,7 +34,7 @@ namespace gui
 	void RenderESPTab() noexcept;
 	void RenderAimbotTab() noexcept;
 	void RenderTrainerTab() noexcept;
-	void ShowInfoWindow() ;
+	void ShowInfoWindow();
 
 	void BeginRender() noexcept;
 	void EndRender() noexcept;

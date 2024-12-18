@@ -35,7 +35,7 @@ constexpr auto m_recoil1 = 0x63786;
 //ac_client.exe + 6378E - FF D2 - call edx
 //entitylist + 4 pour un joueur
 
-/
+
 
 // Hacks
 constexpr auto rapidFire = 0x164;

@@ -1,59 +1,7 @@
-﻿  cheat.cpp
-  gui.cpp
-  main.cpp
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,9): error C2039: 'cerr' n'est pas membre de 'std'
-  (compiler le fichier source 'cheat/gui.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\__msvc_string_view.hpp(22,1):
-      voir la déclaration de 'std'
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,9): error C2065: 'cerr' : identificateur non déclaré
-  (compiler le fichier source 'cheat/gui.cpp')
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,80): error C2039: 'endl' n'est pas membre de 'std'
-  (compiler le fichier source 'cheat/gui.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\__msvc_string_view.hpp(22,1):
-      voir la déclaration de 'std'
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,80): error C2065: 'endl' : identificateur non déclaré
-  (compiler le fichier source 'cheat/gui.cpp')
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,9): error C2039: 'cerr' n'est pas membre de 'std'
-  (compiler le fichier source 'cheat/main.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\__msvc_string_view.hpp(22,1):
-      voir la déclaration de 'std'
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,9): error C2065: 'cerr' : identificateur non déclaré
-  (compiler le fichier source 'cheat/main.cpp')
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,80): error C2039: 'endl' n'est pas membre de 'std'
-  (compiler le fichier source 'cheat/main.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\__msvc_string_view.hpp(22,1):
-      voir la déclaration de 'std'
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,80): error C2065: 'endl' : identificateur non déclaré
-  (compiler le fichier source 'cheat/main.cpp')
-  
-  memory.cpp
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,9): error C2039: 'cerr' n'est pas membre de 'std'
-  (compiler le fichier source 'cheat/memory.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\__msvc_string_view.hpp(22,1):
-      voir la déclaration de 'std'
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,9): error C2065: 'cerr' : identificateur non déclaré
-  (compiler le fichier source 'cheat/memory.cpp')
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,80): error C2039: 'endl' n'est pas membre de 'std'
-  (compiler le fichier source 'cheat/memory.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\__msvc_string_view.hpp(22,1):
-      voir la déclaration de 'std'
-  
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(111,80): error C2065: 'endl' : identificateur non déclaré
-  (compiler le fichier source 'cheat/memory.cpp')
-  
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_dx9.cpp
-  imgui_impl_win32.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
+﻿  gui.cpp
+  Génération de code en cours
+  1 of 1549 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    22 functions had inline decision re-evaluated but remain unchanged
+  Fin de la génération du code
+  cheat-menu.vcxproj -> D:\Programmation\c++\test ac\Release\cheat-menu.exe

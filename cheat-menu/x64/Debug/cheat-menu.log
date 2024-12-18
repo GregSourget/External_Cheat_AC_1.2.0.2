@@ -1,12 +1,349 @@
-﻿  gui.cpp
-F:\ESAIP\S3\C++\Element du prof\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(33,61): warning C4244: 'argument' : conversion de 'uintptr_t' en 'DWORD', perte possible de données
+﻿  cheat.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later.
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,20): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/cheat.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\iostream(18,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,9): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'processName'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C3646: 'processName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,43): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2143: erreur de syntaxe : absence de ';' avant 'noexcept'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(22,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,51): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/cheat.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\iostream(18,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,40): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'moduleName'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C3646: 'moduleName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,73): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C2143: erreur de syntaxe : absence de ';' avant 'const'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,81): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(52,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/cheat.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\cheat.cpp(32,36): error C2664: 'const uintptr_t Memory::GetModuleAddress(const int)' : impossible de convertir l'argument 1 de 'const char [14]' en 'const int'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\cheat.cpp(32,53):
+      Aucun contexte dans lequel cette conversion est possible
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,23):
+      voir la déclaration de 'Memory::GetModuleAddress'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\cheat.cpp(32,36):
+      lors de la tentative de mise en correspondance de la liste des arguments '(const char [14])'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\cheat.cpp(51,36): error C2664: 'const uintptr_t Memory::GetModuleAddress(const int)' : impossible de convertir l'argument 1 de 'const char [14]' en 'const int'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\cheat.cpp(51,53):
+      Aucun contexte dans lequel cette conversion est possible
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,23):
+      voir la déclaration de 'Memory::GetModuleAddress'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\cheat.cpp(51,36):
+      lors de la tentative de mise en correspondance de la liste des arguments '(const char [14])'
+  
+  gui.cpp
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(13,14): error C7525: les variables inline nécessitent au moins '/std:c++17'
   (compiler le fichier source 'cheat/gui.cpp')
   
-F:\ESAIP\S3\C++\Element du prof\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(56,93): warning C4244: 'argument' : conversion de 'const uintptr_t' en 'DWORD', perte possible de données
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(15,14): error C7525: les variables inline nécessitent au moins '/std:c++17'
   (compiler le fichier source 'cheat/gui.cpp')
   
-F:\ESAIP\S3\C++\Element du prof\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(86,22): warning C4244: 'return' : conversion de 'LRESULT' en 'long', perte possible de données
-F:\ESAIP\S3\C++\Element du prof\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(93,28): error C2440: '=' : impossible de convertir de 'long (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' en 'WNDPROC'
-      F:\ESAIP\S3\C++\Element du prof\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(93,28):
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(16,20): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(18,16): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(20,20): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(21,27): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(22,31): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(43,14): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later.
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,20): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/gui.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(29,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,9): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'processName'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C3646: 'processName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,43): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2143: erreur de syntaxe : absence de ';' avant 'noexcept'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(22,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,51): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/gui.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(29,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,40): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'moduleName'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C3646: 'moduleName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,73): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C2143: erreur de syntaxe : absence de ';' avant 'const'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,81): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(52,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/gui.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(16,14): error C2665: 'Memory::Memory' : aucune fonction surchargée n’a pu convertir tous les types d’arguments.
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(105,1):
+      est peut-être 'Memory::Memory(const Memory &)'
+          D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(16,14):
+          'Memory::Memory(const Memory &)' : impossible de convertir l'argument 1 de 'const char [14]' en 'const Memory &'
+              D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(16,15):
+              Raison : impossible de convertir de 'const char [14]' en 'const Memory'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,2):
+      ou       'Memory::Memory(const int)'
+          D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(16,14):
+          'Memory::Memory(const int)' : impossible de convertir l'argument 1 de 'const char [14]' en 'const int'
+              D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(16,15):
+              Aucun contexte dans lequel cette conversion est possible
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(16,14):
+      lors de la tentative de mise en correspondance de la liste des arguments '(const char [14])'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(86,22): warning C4244: 'return' : conversion de 'LRESULT' en 'long', perte possible de données
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(93,28): error C2440: '=' : impossible de convertir de 'long (__cdecl *)(HWND,UINT,WPARAM,LPARAM)' en 'WNDPROC'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(93,28):
       Cette conversion nécessite un reinterpret_cast, un cast de style C ou un cast de style fonction entre parenthèses.
   
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(101,30): error C2440: '=' : impossible de convertir de 'const char [9]' en 'LPCWSTR'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(101,30):
+      Les types pointés ne sont pas liés ; la conversion nécessite un reinterpret_cast, un cast de style C ou un cast de style fonction entre parenthèses.
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(106,11): error C2664: 'HWND CreateWindowExW(DWORD,LPCWSTR,LPCWSTR,DWORD,int,int,int,int,HWND,HMENU,HINSTANCE,LPVOID)' : impossible de convertir l'argument 2 de 'const char [9]' en 'LPCWSTR'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(108,3):
+      Les types pointés ne sont pas liés ; la conversion nécessite un reinterpret_cast, un cast de style C ou un cast de style fonction entre parenthèses.
+      C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um\winuser.h(4439,1):
+      voir la déclaration de 'CreateWindowExW'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.cpp(106,11):
+      lors de la tentative de mise en correspondance de la liste des arguments '(int, const char [9], const char *, unsigned long, int, int, const int, const int, int, int, HINSTANCE, int)'
+  
+  main.cpp
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(13,14): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(15,14): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(16,20): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(18,16): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(20,20): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(21,27): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(22,31): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\gui.h(43,14): error C7525: les variables inline nécessitent au moins '/std:c++17'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later.
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,20): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/main.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(29,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,9): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'processName'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C3646: 'processName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,43): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2143: erreur de syntaxe : absence de ';' avant 'noexcept'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(22,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,51): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/main.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(29,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,40): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'moduleName'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C3646: 'moduleName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,73): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C2143: erreur de syntaxe : absence de ';' avant 'const'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,81): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/main.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(52,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/main.cpp')
+  
+  memory.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\string_view(12): warning STL4038: The contents of <string_view> are available only with C++17 or later.
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,20): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/memory.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(29,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,9): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'processName'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,32): error C3646: 'processName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,43): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2143: erreur de syntaxe : absence de ';' avant 'noexcept'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,45): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(22,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,51): error C2039: 'string_view' n'est pas membre de 'std'
+  (compiler le fichier source 'cheat/memory.cpp')
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.42.34433\include\vector(29,1):
+      voir la déclaration de 'std'
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,40): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C2146: erreur de syntaxe : absence de ')' avant l'identificateur 'moduleName'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,63): error C3646: 'moduleName' : spécificateur de substitution inconnu
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,73): error C2059: erreur de syntaxe : ')'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C2143: erreur de syntaxe : absence de ';' avant 'const'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,75): error C4430: spécificateur de type manquant - int est pris en compte par défaut. Remarque : C++ ne prend pas en charge int par défaut
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(51,81): error C2059: erreur de syntaxe : 'noexcept'
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(52,2): error C2334: jetons inattendus avant '{' ; corps apparent de la fonction ignoré
+  (compiler le fichier source 'cheat/memory.cpp')
+  
+D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.cpp(5,25): error C2665: 'Memory::Memory' : aucune fonction surchargée n’a pu convertir tous les types d’arguments.
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(105,1):
+      est peut-être 'Memory::Memory(const Memory &)'
+          D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.cpp(5,25):
+          'Memory::Memory(const Memory &)' : impossible de convertir l'argument 1 de 'const char [14]' en 'const Memory &'
+              D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.cpp(5,26):
+              Raison : impossible de convertir de 'const char [14]' en 'const Memory'
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.h(21,2):
+      ou       'Memory::Memory(const int)'
+          D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.cpp(5,25):
+          'Memory::Memory(const int)' : impossible de convertir l'argument 1 de 'const char [14]' en 'const int'
+              D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.cpp(5,26):
+              Aucun contexte dans lequel cette conversion est possible
+      D:\Programmation\c++\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main_beginner\Assault_cube_cheat_menu-main\cheat\memory.cpp(5,25):
+      lors de la tentative de mise en correspondance de la liste des arguments '(const char [14])'
+  
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx9.cpp
+  imgui_impl_win32.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  Génération de code en cours...
