@@ -326,7 +326,7 @@ void gui::RenderESPTab() noexcept
 		else
 			cheat::espoff();
 	}
-	int entityCount = GetEntityCount(); // Appel à la fonction pour obtenir le nombre d'entités
+	int entityCount = GetEntityNb();
 	ImGui::Text("Number of Entities: %d", entityCount);
 }
 

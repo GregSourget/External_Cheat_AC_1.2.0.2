@@ -2,4 +2,4 @@
 
 #include "struct.h"
 
-int GetEntityCount();
+int GetEntityNb();
