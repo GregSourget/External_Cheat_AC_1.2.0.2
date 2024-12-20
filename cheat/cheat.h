@@ -8,11 +8,12 @@ namespace cheat
 	void godmodeoff() noexcept;
 	extern bool isGodModeOn;
 
+
 	extern int updatedNade;
 	void infnadeon() noexcept;
 	void infnadeoff() noexcept;
 	extern bool isInfNadeOn;
-
+	
 	extern int updatedAmmo;
 	void infammoon() noexcept;
 	void infammooff() noexcept;

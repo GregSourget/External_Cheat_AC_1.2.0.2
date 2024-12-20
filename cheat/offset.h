@@ -5,6 +5,7 @@
 // Lists
 constexpr auto localPlayer = 0x109B74;
 constexpr auto entityList = 0x10F4F8;
+constexpr auto player_base = entityList + 0x40000 + 0x4;
 
 //static int players_in_map = player_base + 0xC;
 

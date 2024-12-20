@@ -273,6 +273,7 @@ void gui::RenderTrainerTab() noexcept
 	{
 		if (isInfAmmoOn)
 			cheat::infammoon();
+
 		else
 			cheat::infammooff();
 	}
@@ -316,9 +317,6 @@ void gui::RenderAimbotTab() noexcept {
 	}
 }
 
-
-
-
 void gui::RenderESPTab() noexcept
 {
 	if (ImGui::Checkbox("Wallhack##Checkbox", &isESPOn))
@@ -328,6 +326,8 @@ void gui::RenderESPTab() noexcept
 		else
 			cheat::espoff();
 	}
+	int entityCount = GetEntityCount(); // Appel à la fonction pour obtenir le nombre d'entités
+	ImGui::Text("Number of Entities: %d", entityCount);
 }
 
 void gui::Render() noexcept

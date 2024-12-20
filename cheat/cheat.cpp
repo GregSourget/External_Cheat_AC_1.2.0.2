@@ -100,6 +100,7 @@ void cheat::infnadeon() noexcept
         }).detach();
 }
 
+
 void cheat::infnadeoff() noexcept
 {
     if (!isInfNadeOn)

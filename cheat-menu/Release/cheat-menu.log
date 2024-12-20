@@ -1,7 +1,140 @@
-﻿  gui.cpp
-  Génération de code en cours
-  8 of 1551 functions ( 0.5%) were compiled, the rest were copied from previous compilation.
-    2 functions were new in current compilation
-    20 functions had inline decision re-evaluated but remain unchanged
-  Fin de la génération du code
-  cheat-menu.vcxproj -> C:\Users\profile1\Documents\Programmation\Cheat_AC_project\Release\cheat-menu.exe
+﻿  entities.cpp
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(25,45): error C2065: 'entities_off' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(25,16): error C2737: 'entityBase' : l’objet const doit être initialisé
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(36,44): error C3536: 'entityBase' : ne peut pas être utilisé avant d'avoir été initialisé
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(39,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(39,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(39,94): error C2039: 'base' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(39,115): error C2039: 'base' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(40,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(40,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(40,106): error C2039: 'base' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(40,127): error C2039: 'base' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(41,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(41,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(41,86): error C2065: 'of_name' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(42,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(42,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(42,85): error C2065: 'of_health' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(43,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(43,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(43,85): error C2065: 'of_posx' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(43,104): error C2039: 'position_head' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(43,136): error C2039: 'position_head' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(44,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(44,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(44,85): error C2065: 'of_posy' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(44,104): error C2039: 'position_head' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(44,136): error C2039: 'position_head' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(45,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(45,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(45,85): error C2065: 'of_posz' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(45,104): error C2039: 'position_head' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(45,136): error C2039: 'position_head' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(46,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(46,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(46,85): error C2065: 'of_team' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(46,104): error C2039: 'team' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(46,125): error C2039: 'team' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(47,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(47,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(47,85): error C2065: 'of_posx_normal' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(47,111): error C2039: 'position_feet' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(47,143): error C2039: 'position_feet' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(48,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(48,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(48,85): error C2065: 'of_posy_normal' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(48,111): error C2039: 'position_feet' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(48,143): error C2039: 'position_feet' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(49,16): error C2039: 'ReadProcessMemory' n'est pas membre de 'Memory'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\memory.h(13,7):
+      voir la déclaration de 'Memory'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(49,34): error C2065: 'winFunc' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(49,85): error C2065: 'of_posz_normal' : identificateur non déclaré
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(49,111): error C2039: 'position_feet' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
+C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\entities.cpp(49,143): error C2039: 'position_feet' n'est pas membre de 'Entity'
+      C:\Users\profile1\Documents\Programmation\Cheat_AC_project\cheat\struct.h(14,7):
+      voir la déclaration de 'Entity'
+  
