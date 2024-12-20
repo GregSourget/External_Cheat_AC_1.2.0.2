@@ -31,6 +31,11 @@ namespace cheat
 
 	void getinfoon() noexcept;
 	extern bool isGetInfoOn;
+
+	void espon() noexcept;
+	void espoff() noexcept;
+	extern bool isESPOn;
+
 	extern std::uintptr_t headPtr; // Pour stocker les pointeurs vers les têtes des ennemis
 	extern std::uintptr_t entityL;
 	extern std::uintptr_t entity;

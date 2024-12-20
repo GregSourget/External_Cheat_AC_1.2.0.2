@@ -23,6 +23,7 @@ bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;
 bool cheat::isGetInfoOn = false;
+bool cheat::isESPOn = false;
 std::uintptr_t cheat::headPtr = 0;
 std::uintptr_t cheat::entityL = 0;
 std::uintptr_t cheat::entity = 0;
@@ -224,7 +225,13 @@ void cheat::armoroff() noexcept {
     memory.Write<int>(armorAddress, initialArmor);
 }
 
-
 void cheat::getinfoon() noexcept {
+
+}
+void cheat::espon() noexcept {
+
+}
+
+void cheat::espoff() noexcept {
 
 }

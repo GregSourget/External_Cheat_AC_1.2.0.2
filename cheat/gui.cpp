@@ -11,6 +11,7 @@ bool gui::isInfAmmoOn = false;
 bool gui::isArmorOn = false;
 bool gui::isNoRecoilOn = false;
 bool gui::isGetInfoOn = false;
+bool gui::isESPOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
@@ -283,7 +284,7 @@ void gui::RenderTrainerTab() noexcept
 			cheat::norecoiloff();
 	}
 
-	if (ImGui::Checkbox("GOD ARMOORRRR##Checkbox", &isArmorOn))
+	if (ImGui::Checkbox("Infinite Armor##Checkbox", &isArmorOn))
 	{
 		if (isArmorOn)
 			cheat::armoron();
@@ -304,6 +305,14 @@ void gui::RenderAimbotTab() noexcept {
 		ImGui::Text("Head Value: %f", cheat::headValue); // Pour un int
 		ImGui::End();
 	}
+
+	if (ImGui::Checkbox("geinfo##Checkbox", &isGetInfoOn))
+	{
+		if (isGetInfoOn)
+			cheat::getinfoon();
+		else
+			return;
+	}
 }
 
 
@@ -311,12 +320,12 @@ void gui::RenderAimbotTab() noexcept {
 
 void gui::RenderESPTab() noexcept
 {
-	if (ImGui::Checkbox("GodMode##Checkbox", &isGodModeOn))
+	if (ImGui::Checkbox("Wallhack##Checkbox", &isESPOn))
 	{
-		if (isGodModeOn)
-			cheat::godmodeon();
+		if (isESPOn)
+			cheat::espon();
 		else
-			cheat::godmodeoff();
+			cheat::espoff();
 	}
 }
 

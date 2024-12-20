@@ -66,6 +66,10 @@ namespace gui
 	extern bool isArmorOn;
 	extern int updatedArmor;
 
+	extern void espon() noexcept;
+	extern void espoff() noexcept;
+	extern bool isESPOn;
+
 	extern void getinfoon() noexcept;
 	extern bool isGetInfoOn;
 	//extern int headValue;
