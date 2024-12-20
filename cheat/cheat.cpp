@@ -7,7 +7,6 @@
 #include "../cheat/cheat.h"
 #include <thread>
 
-
 int cheat::updatedHealth = 100; //initalisation
 int cheat::updatedNade = 0;
 int cheat::updatedAmmo = 20;
@@ -57,7 +56,6 @@ void cheat::godmodeon() noexcept
         }).detach();
 }
 
-
 void cheat::godmodeoff() noexcept
 {
     if (!isGodModeOn)
@@ -101,7 +99,6 @@ void cheat::infnadeon() noexcept
         }
         }).detach();
 }
-
 
 void cheat::infnadeoff() noexcept
 {
@@ -171,8 +168,6 @@ void cheat::infammooff() noexcept
     memory.Write<int>(pistolAmmoAddress, initialAmmoPistol);
 }
 
-
-
 void cheat::norecoilon() noexcept
 {
 
@@ -211,6 +206,7 @@ void cheat::armoron() noexcept {
         }).detach();
 
 }
+
 void cheat::armoroff() noexcept {
     if (!isArmorOn)
         return;
@@ -228,6 +224,7 @@ void cheat::armoroff() noexcept {
 void cheat::getinfoon() noexcept {
 
 }
+
 void cheat::espon() noexcept {
 
 }
