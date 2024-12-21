@@ -1,8 +1,8 @@
 #include "memory.h"
 #include "offset.h"
 #include "struct.h"
+#include <vector>
 #include <iostream>
-#include <windows.h>
 
 int GetEntityNb() {  
     auto& memory = getMemory();
@@ -17,6 +17,7 @@ std::vector<std::uintptr_t> GatherEntityInfo() {
     const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
     const auto entity_list = memory.Read<std::uintptr_t>(moduleBase + entityList);
     int nb_entities = GetEntityNb();
+
     std::vector<std::uintptr_t> entityOffsets;
 
     for (int i = 0; i < nb_entities; i++) {
@@ -26,3 +27,7 @@ std::vector<std::uintptr_t> GatherEntityInfo() {
 
     return entityOffsets;
 }
+
+//rajouter une fonction dans ce fichier pour chopper l'ennemie le plus proche et 
+// ameliorer celle existence pour chopper toute les infos avec la struct entity
+

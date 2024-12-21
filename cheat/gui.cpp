@@ -2,6 +2,8 @@
 #include "cheat.h"
 #include "memory.h"
 #include "entities.h"
+#include "player.h"
+#include "struct.h"
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_impl_dx9.h"
 #include "../imgui/imgui_impl_win32.h"
@@ -332,8 +334,16 @@ void gui::RenderESPTab() noexcept
 		else
 			cheat::espoff();
 	}
+}
+
+void gui::RenderPlayerInfoTab() noexcept
+{
+	
 	int entityCount = GetEntityNb();
 	ImGui::Text("Number of Entities: %d", entityCount);
+
+	Entity player = playerInfo();
+	ImGui::Text("Health: %d", player.health);
 }
 
 void gui::Render() noexcept
@@ -366,6 +376,12 @@ void gui::Render() noexcept
 		if (ImGui::BeginTabItem("ESP"))
 		{
 			RenderESPTab();
+			ImGui::EndTabItem();
+		}
+
+		if (ImGui::BeginTabItem("PlayerInfo"))
+		{
+			RenderPlayerInfoTab();
 			ImGui::EndTabItem();
 		}
 
