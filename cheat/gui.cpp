@@ -315,6 +315,12 @@ void gui::RenderAimbotTab() noexcept {
 		else
 			return;
 	}
+	std::vector<std::uintptr_t> entityOffsets = GatherEntityInfo();
+	ImGui::Begin("Entity Offsets");
+	for (const auto& offset : entityOffsets) {
+		ImGui::Text("Entity Offset: 0x%p", reinterpret_cast<void*>(offset));
+	}
+	ImGui::End();
 }
 
 void gui::RenderESPTab() noexcept
