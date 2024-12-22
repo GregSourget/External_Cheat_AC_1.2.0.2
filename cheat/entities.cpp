@@ -62,10 +62,65 @@ std::vector<Entity> GetEntitiesInfo() {
     return entities;
 }
 
+Entity GetClosestPlayer() {
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
 
+    // Obtenir l'adresse du joueur local
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
 
+    // Obtenir la position du joueur local
+    const auto localHeadX = localPlayerPtr + headX;
+    const auto localHeadY = localPlayerPtr + headY;
+    const auto localHeadZ = localPlayerPtr + headZ;
 
+    // Lire les positions du joueur local
+    const float localX = memory.Read<float>(localHeadX);
+    const float localY = memory.Read<float>(localHeadY);
+    const float localZ = memory.Read<float>(localHeadZ);
 
-//rajouter une fonction dans ce fichier pour chopper l'ennemie le plus proche et 
-// ameliorer celle existence pour chopper toute les infos avec la struct entity
+    // Obtenir toutes les entités
+    std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
 
+    Entity closestPlayer;
+    float closestDistance = FLT_MAX; // Distance initiale infinie pour trouver le plus proche
+
+    for (const auto& entityOffset : entityOffsets) {
+        // Lire les informations de l'entité (joueur) en cours
+        const auto healthAddress = entityOffset + m_iHealth;
+        const auto teamAddress = entityOffset + iTeamNum;
+        const auto headXAddress = entityOffset + headX;
+        const auto headYAddress = entityOffset + headY;
+        const auto headZAddress = entityOffset + headZ;
+
+        int health = memory.Read<int>(healthAddress);
+        int team = memory.Read<int>(teamAddress);
+        float headX = memory.Read<float>(headXAddress);
+        float headY = memory.Read<float>(headYAddress);
+        float headZ = memory.Read<float>(headZAddress);
+
+        // Ignorer le joueur local
+        if (health <= 0 || team == localPlayerTeam) { // Remplacez `localPlayerTeam` par l'équipe du joueur local
+            continue;
+        }
+
+        // Calculer la distance euclidienne entre le joueur local et l'entité
+        float distance = std::sqrt(
+            std::pow(localX - headX, 2) +
+            std::pow(localY - headY, 2) +
+            std::pow(localZ - headZ, 2)
+        );
+
+        // Si cette entité est plus proche que la précédente, mettre à jour la plus proche
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestPlayer.health = health;
+            closestPlayer.teamNumber = team;
+            closestPlayer.headPosition.x = headX;
+            closestPlayer.headPosition.y = headY;
+            closestPlayer.headPosition.z = headZ;
+        }
+    }
+
+    return closestPlayer;
+}
