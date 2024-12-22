@@ -81,6 +81,10 @@ Vector3 GetClosestEnemyPos() {
             continue;
         }
 
+        if (entity.health <= 0) {
+            continue;
+        }
+
         float distance = std::sqrt(std::pow(localX - entity.headPosition.x, 2) + std::pow(localY - entity.headPosition.y, 2) + std::pow(localZ - entity.headPosition.z, 2));
 
         if (distance < closestDistance) {
@@ -88,7 +92,7 @@ Vector3 GetClosestEnemyPos() {
 
             closestEnemy.x = entity.headPosition.x;
             closestEnemy.y = entity.headPosition.y;
-            closestEnemy.z = entity.headPosition.z;
+            closestEnemy.z = entity.headPosition.z + 0.05; //+0.05 because the vecthead is center in the neck not the head
         }
     }
     return closestEnemy;
