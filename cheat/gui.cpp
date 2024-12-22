@@ -2,7 +2,6 @@
 #include "cheat.h"
 #include "memory.h"
 #include "entities.h"
-#include "player.h"
 #include "struct.h"
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_impl_dx9.h"
@@ -333,9 +332,15 @@ void gui::RenderESPTab() noexcept
 
 void gui::RenderPlayerInfoTab() noexcept
 {
+	//Entity number
 	int entityCount = GetEntityNb();
 	ImGui::Text("Number of Entities: %d", entityCount);
 
+	//Closest ennemy 
+	Vector3 closestEnemy = GetClosestEnemyPos();
+	ImGui::Text("Closest Enemy : (%.2f, %.2f, %.2f)", closestEnemy.x, closestEnemy.y, closestEnemy.z);
+	
+	//Entities info
 	std::vector<Entity> entities = GetEntitiesInfo();
 	std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
 

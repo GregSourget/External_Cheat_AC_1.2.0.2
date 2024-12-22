@@ -5,7 +5,7 @@
 #include <iostream>
 #include <cmath>
 
-int GetEntityNb() {  
+int GetEntityNb(){  
     auto& memory = getMemory();
     const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
     const auto nb_entites = memory.Read<std::uintptr_t>(moduleBase + off_nb_entities);
@@ -13,7 +13,7 @@ int GetEntityNb() {
     return nb_entites;
 }
 
-std::vector<std::uintptr_t> EntitiesOffset() {
+std::vector<std::uintptr_t> EntitiesOffset(){
     auto& memory = getMemory();
     const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
     const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
@@ -23,10 +23,9 @@ std::vector<std::uintptr_t> EntitiesOffset() {
     std::vector<std::uintptr_t> entityOffsets;
 
     //add player to the array
-    //const auto player_offset = memory.Read<std::uintptr_t>(localPlayerPtr);
     entityOffsets.push_back(localPlayerPtr);
 
-    for (int i = 1; i < nb_entities; i++) { //i=1 to skip the 1st iteration, the player offset
+    for (int i = 1; i < nb_entities; i++) { //i=1 to skip the first iteration, the player offset
         const auto entity_offset = memory.Read<std::uintptr_t>(entity_list + (i * sizeof(std::uintptr_t)));
         entityOffsets.push_back(entity_offset);
     }
@@ -34,14 +33,14 @@ std::vector<std::uintptr_t> EntitiesOffset() {
     return entityOffsets;
 }
 
-std::vector<Entity> GetEntitiesInfo() {
+std::vector<Entity> GetEntitiesInfo(){
     auto& memory = getMemory();
     const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
 
     std::vector<Entity> entities;
     std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
 
-    for (const auto& entityOffset : entityOffsets) {
+    for (const auto& entityOffset : entityOffsets){
         Entity entity;
 
         const auto healthAddress = entityOffset + m_iHealth;
@@ -62,65 +61,35 @@ std::vector<Entity> GetEntitiesInfo() {
     return entities;
 }
 
-Entity GetClosestPlayer() {
-    auto& memory = getMemory();
-    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+Vector3 GetClosestEnemyPos() {
+    std::vector<Entity> entities = GetEntitiesInfo();
 
-    // Obtenir l'adresse du joueur local
-    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    float closestDistance = 99999;
 
-    // Obtenir la position du joueur local
-    const auto localHeadX = localPlayerPtr + headX;
-    const auto localHeadY = localPlayerPtr + headY;
-    const auto localHeadZ = localPlayerPtr + headZ;
+    Entity localPlayer = entities[0];
 
-    // Lire les positions du joueur local
-    const float localX = memory.Read<float>(localHeadX);
-    const float localY = memory.Read<float>(localHeadY);
-    const float localZ = memory.Read<float>(localHeadZ);
+    float localX = localPlayer.headPosition.x;
+    float localY = localPlayer.headPosition.y;
+    float localZ = localPlayer.headPosition.z;
+    int localTeam = localPlayer.teamNumber;
 
-    // Obtenir toutes les entités
-    std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
+    Vector3 closestEnemy;
 
-    Entity closestPlayer;
-    float closestDistance = FLT_MAX; // Distance initiale infinie pour trouver le plus proche
-
-    for (const auto& entityOffset : entityOffsets) {
-        // Lire les informations de l'entité (joueur) en cours
-        const auto healthAddress = entityOffset + m_iHealth;
-        const auto teamAddress = entityOffset + iTeamNum;
-        const auto headXAddress = entityOffset + headX;
-        const auto headYAddress = entityOffset + headY;
-        const auto headZAddress = entityOffset + headZ;
-
-        int health = memory.Read<int>(healthAddress);
-        int team = memory.Read<int>(teamAddress);
-        float headX = memory.Read<float>(headXAddress);
-        float headY = memory.Read<float>(headYAddress);
-        float headZ = memory.Read<float>(headZAddress);
-
-        // Ignorer le joueur local
-        if (health <= 0 || team == localPlayerTeam) { // Remplacez `localPlayerTeam` par l'équipe du joueur local
+    for (size_t i = 1; i < entities.size(); ++i) {
+        const auto& entity = entities[i];   //I use const auto to prevent my coordinates from being updated and distorting the comparison btw
+        if (entity.teamNumber == localTeam) {
             continue;
         }
 
-        // Calculer la distance euclidienne entre le joueur local et l'entité
-        float distance = std::sqrt(
-            std::pow(localX - headX, 2) +
-            std::pow(localY - headY, 2) +
-            std::pow(localZ - headZ, 2)
-        );
+        float distance = std::sqrt(std::pow(localX - entity.headPosition.x, 2) + std::pow(localY - entity.headPosition.y, 2) + std::pow(localZ - entity.headPosition.z, 2));
 
-        // Si cette entité est plus proche que la précédente, mettre à jour la plus proche
         if (distance < closestDistance) {
             closestDistance = distance;
-            closestPlayer.health = health;
-            closestPlayer.teamNumber = team;
-            closestPlayer.headPosition.x = headX;
-            closestPlayer.headPosition.y = headY;
-            closestPlayer.headPosition.z = headZ;
+
+            closestEnemy.x = entity.headPosition.x;
+            closestEnemy.y = entity.headPosition.y;
+            closestEnemy.z = entity.headPosition.z;
         }
     }
-
-    return closestPlayer;
+    return closestEnemy;
 }
