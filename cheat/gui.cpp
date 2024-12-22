@@ -310,19 +310,14 @@ void gui::RenderAimbotTab() noexcept {
 		ImGui::End();
 	}
 
-	if (ImGui::Checkbox("geinfo##Checkbox", &isGetInfoOn))
+	if (ImGui::Checkbox("getinfo##Checkbox", &isGetInfoOn))
 	{
 		if (isGetInfoOn)
 			cheat::getinfoon();
 		else
 			return;
 	}
-	std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
-	ImGui::Begin("Entity Offsets");
-	for (const auto& offset : entityOffsets) {
-		ImGui::Text("Entity Offset: 0x%p", reinterpret_cast<void*>(offset));
-	}
-	ImGui::End();
+	
 }
 
 void gui::RenderESPTab() noexcept
@@ -338,16 +333,34 @@ void gui::RenderESPTab() noexcept
 
 void gui::RenderPlayerInfoTab() noexcept
 {
-
 	int entityCount = GetEntityNb();
 	ImGui::Text("Number of Entities: %d", entityCount);
 
-	Entity player = playerInfo();
-	ImGui::Text("Name : %d", player.name);
-	ImGui::Text("Health: %d", player.health);
-	ImGui::Text("Team : %d", player.teamNumber);
-	ImGui::Text("Pos Head: (%.2f, %.2f, %.2f)", player.headPosition.x, player.headPosition.y, player.headPosition.z);
+	std::vector<Entity> entities = GetEntitiesInfo();
+	std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
 
+	ImGui::Begin("Entities Info");
+
+	if (entities.empty()) {
+		ImGui::Text("No entities found.");
+	}
+	else {
+		for (size_t i = 0; i < entities.size(); ++i) {
+			const auto& entity = entities[i];
+
+			ImGui::Text("Health: %d", entity.health);
+			ImGui::Text("Team: %d", entity.teamNumber);
+			ImGui::Text("Head Position: (%.2f, %.2f, %.2f)",
+				entity.headPosition.x, entity.headPosition.y, entity.headPosition.z);
+
+			if (i < entityOffsets.size()) {
+				ImGui::Text("Entity Offset: 0x%p", reinterpret_cast<void*>(entityOffsets[i]));
+			}
+			ImGui::NewLine();
+		}
+	}
+
+	ImGui::End();
 }
 
 void gui::Render() noexcept
