@@ -12,16 +12,22 @@ constexpr auto off_nb_entities = 0x10F500;
 constexpr auto m_iHealth = 0x0000F8;
 constexpr auto m_iName = 0x205;
 constexpr auto m_Armor = 0xFC;
-constexpr auto m_XCoord = 0x28;
-constexpr auto m_YCoord = 0x2C;
-constexpr auto m_ZCoord = 0x30;
+//head pos bc feet is useless af
+constexpr auto headX = 0x4;
+constexpr auto headY = 0x8;
+constexpr auto headZ = 0xC;
+
+constexpr auto feetX = 0x28;
+constexpr auto feetY = 0x2C;
+constexpr auto feetZ = 0x30;
+
 constexpr auto m_ViewangleWidth = 0x34;
 constexpr auto m_ViewAngleHeight = 0x38;
 constexpr auto m_iShotAmount = 0x180;
 
 
 constexpr auto m_vecOrigin = 0x28;
-constexpr auto vec3_head = 0x4;
+//constexpr auto vec3_head = 0x4;
 constexpr auto iTeamNum = 0x32C;
 constexpr auto dwViewMatrix = 0x501AE8;
 //ptr view matrix 17F00

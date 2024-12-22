@@ -2,4 +2,4 @@
 #include <vector>
 
 int GetEntityNb();
-std::vector<std::uintptr_t> GatherEntityInfo();
+std::vector<std::uintptr_t> EntitiesOffset();

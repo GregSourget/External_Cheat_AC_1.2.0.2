@@ -317,7 +317,7 @@ void gui::RenderAimbotTab() noexcept {
 		else
 			return;
 	}
-	std::vector<std::uintptr_t> entityOffsets = GatherEntityInfo();
+	std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
 	ImGui::Begin("Entity Offsets");
 	for (const auto& offset : entityOffsets) {
 		ImGui::Text("Entity Offset: 0x%p", reinterpret_cast<void*>(offset));
@@ -338,12 +338,16 @@ void gui::RenderESPTab() noexcept
 
 void gui::RenderPlayerInfoTab() noexcept
 {
-	
+
 	int entityCount = GetEntityNb();
 	ImGui::Text("Number of Entities: %d", entityCount);
 
 	Entity player = playerInfo();
+	ImGui::Text("Name : %d", player.name);
 	ImGui::Text("Health: %d", player.health);
+	ImGui::Text("Team : %d", player.teamNumber);
+	ImGui::Text("Pos Head: (%.2f, %.2f, %.2f)", player.headPosition.x, player.headPosition.y, player.headPosition.z);
+
 }
 
 void gui::Render() noexcept

@@ -8,7 +8,7 @@ namespace gui
 	extern HWND g_hEdit;
 
 	constexpr int WIDTH = 500;
-	constexpr int HEIGHT = 300;
+	constexpr int HEIGHT = 700;
 
 	inline bool isRunning = true;
 
