@@ -19,3 +19,4 @@ public:
     char name[20];
     int teamNumber;
 };
+

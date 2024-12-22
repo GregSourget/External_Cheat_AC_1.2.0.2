@@ -1,10 +1,12 @@
-#include <Windows.h>
+//#include <Windows.h>
 #include <vector>
 #include <iostream>
-#include <CommCtrl.h>
+//#include <CommCtrl.h>
 #include "../cheat/offset.h"
 #include "../cheat/memory.h"
 #include "../cheat/cheat.h"
+#include "struct.h"
+#include "entities.h"
 #include <thread>
 
 int cheat::updatedHealth = 100; //initalisation
@@ -21,12 +23,13 @@ bool cheat::isNoRecoilOn = false; // check
 bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;
-bool cheat::isGetInfoOn = false;
+//bool cheat::isGetInfoOn = false;
 bool cheat::isESPOn = false;
-std::uintptr_t cheat::headPtr = 0;
-std::uintptr_t cheat::entityL = 0;
-std::uintptr_t cheat::entity = 0;
-float cheat::headValue = 0.0f;
+bool cheat::isAimBotOn = false;
+//std::uintptr_t cheat::headPtr = 0;
+//std::uintptr_t cheat::entityL = 0;
+//std::uintptr_t cheat::entity = 0;
+//float cheat::headValue = 0.0f;
 
 void cheat::godmodeon() noexcept
 {
@@ -71,6 +74,7 @@ void cheat::godmodeoff() noexcept
     memory.Write<int>(healthAddress, initialHealth);
 }
 
+
 void cheat::infnadeon() noexcept
 {
     if (isInfNadeOn)
@@ -100,7 +104,6 @@ void cheat::infnadeon() noexcept
         }).detach();
 }
 
-
 void cheat::infnadeoff() noexcept
 {
     if (!isInfNadeOn)
@@ -116,6 +119,7 @@ void cheat::infnadeoff() noexcept
     memory.Write<int>(nadeAddress, initialNade);
 
 }
+
 
 void cheat::infammoon() noexcept
 {
@@ -168,6 +172,7 @@ void cheat::infammooff() noexcept
     memory.Write<int>(ammoAddress, initialAmmo);
     memory.Write<int>(pistolAmmoAddress, initialAmmoPistol);
 }
+
 
 void cheat::norecoilon() noexcept
 {
@@ -222,9 +227,57 @@ void cheat::armoroff() noexcept {
     memory.Write<int>(armorAddress, initialArmor);
 }
 
-void cheat::getinfoon() noexcept {
 
+//void cheat::getinfoon() noexcept {
+//
+//}
+
+
+void cheat::aimboton() noexcept {
+    if (isAimBotOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto yawAddress = localPlayerPtr + m_yaw;
+    const auto pitchAddress = localPlayerPtr + m_pitch;
+
+    isAimBotOn = true;
+
+    std::thread([yawAddress, pitchAddress, &memory]() {
+        while (cheat::isAimBotOn) {
+            std::vector<Entity> entities = GetEntitiesInfo();
+            Entity Player = entities[0];
+            Vector3 headPlayer = Player.headPosition;
+
+            Vector3 headEnemy = GetClosestEnemyPos();
+
+            float deltaX = headEnemy.x - headPlayer.x;
+            float deltaY = headEnemy.y - headPlayer.y;
+            float deltaZ = headEnemy.z - headPlayer.z;
+
+            float horizontalDistance = std::sqrt(deltaX * deltaX + deltaY * deltaY);
+            float pitch = std::atan2(deltaZ, horizontalDistance) * 180.0f / 3.14159f;
+            float yaw = std::atan2(deltaY, deltaX) * 180.0f / 3.14159f;
+            yaw = yaw + 90;
+
+            memory.Write<float>(yawAddress, yaw);
+            memory.Write<float>(pitchAddress, pitch);
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+        }).detach();
 }
+
+
+
+void cheat::aimbotoff() noexcept {
+    if (!isAimBotOn)
+        return;
+    isAimBotOn = false;
+}
+
 
 void cheat::espon() noexcept {
 

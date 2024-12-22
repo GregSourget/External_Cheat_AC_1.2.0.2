@@ -29,17 +29,22 @@ namespace cheat
 	void armoroff() noexcept;
 	extern bool isArmorOn;
 
-	void getinfoon() noexcept;
-	extern bool isGetInfoOn;
+	/*void getinfoon() noexcept;
+	extern bool isGetInfoOn;*/
+
+	void aimboton() noexcept;
+	void aimbotoff() noexcept;
+	extern bool isAimBotOn;
+
 
 	void espon() noexcept;
 	void espoff() noexcept;
 	extern bool isESPOn;
 
-	extern std::uintptr_t headPtr; // Pour stocker les pointeurs vers les têtes des ennemis
-	extern std::uintptr_t entityL;
-	extern std::uintptr_t entity;
-	extern float headValue;
+	//extern std::uintptr_t headPtr; // Pour stocker les pointeurs vers les têtes des ennemis
+	//extern std::uintptr_t entityL;
+	//extern std::uintptr_t entity;
+	//extern float headValue;
 }
 
 

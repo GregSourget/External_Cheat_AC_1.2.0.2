@@ -12,8 +12,9 @@ bool gui::isInfNadeOn = false;
 bool gui::isInfAmmoOn = false;
 bool gui::isArmorOn = false;
 bool gui::isNoRecoilOn = false;
-bool gui::isGetInfoOn = false;
+//bool gui::isGetInfoOn = false;
 bool gui::isESPOn = false;
+bool gui::isAimBotOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
@@ -296,27 +297,15 @@ void gui::RenderTrainerTab() noexcept
 	}
 }
 
-void gui::RenderAimbotTab() noexcept {
-	if (ImGui::Checkbox("Show Info##Checkbox", &cheat::isGetInfoOn)) {
-		// Pas besoin de condition supplémentaire ici si getinfoon gère déjà isGetInfoOn
-	}
-
-	if (cheat::isGetInfoOn) {
-		ImGui::Begin("Entity Info", nullptr);
-		ImGui::Text("EntityList : 0x%p", reinterpret_cast<void*>(cheat::entityL));
-		ImGui::Text("entity: 0x%p", reinterpret_cast<void*>(cheat::entity));
-		ImGui::Text("Head Value: %f", cheat::headValue); // Pour un int
-		ImGui::End();
-	}
-
-	if (ImGui::Checkbox("getinfo##Checkbox", &isGetInfoOn))
+void gui::RenderAimbotTab() noexcept 
+{
+	if (ImGui::Checkbox("Aimbot##Checkbox", &isAimBotOn))
 	{
-		if (isGetInfoOn)
-			cheat::getinfoon();
+		if (isAimBotOn)
+			cheat::aimboton();
 		else
-			return;
+			cheat::aimbotoff();
 	}
-	
 }
 
 void gui::RenderESPTab() noexcept
@@ -401,7 +390,7 @@ void gui::Render() noexcept
 			ImGui::EndTabItem();
 		}
 
-		if (ImGui::BeginTabItem("PlayerInfo"))
+		if (ImGui::BeginTabItem("EntitiesInfo"))
 		{
 			RenderPlayerInfoTab();
 			ImGui::EndTabItem();

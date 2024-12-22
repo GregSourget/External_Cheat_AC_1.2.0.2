@@ -12,7 +12,7 @@ constexpr auto off_nb_entities = 0x10F500;
 constexpr auto m_iHealth = 0x0000F8;
 constexpr auto m_iName = 0x205;
 constexpr auto m_Armor = 0xFC;
-//head pos bc feet is useless af
+
 constexpr auto headX = 0x4;
 constexpr auto headY = 0x8;
 constexpr auto headZ = 0xC;
@@ -23,6 +23,8 @@ constexpr auto feetZ = 0x30;
 
 constexpr auto m_ViewangleWidth = 0x34;
 constexpr auto m_ViewAngleHeight = 0x38;
+constexpr auto m_yaw = 0x40;
+constexpr auto m_pitch = 0x44;
 constexpr auto m_iShotAmount = 0x180;
 
 
