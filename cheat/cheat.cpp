@@ -234,6 +234,9 @@ void cheat::armoroff() noexcept {
 
 
 void cheat::aimboton() noexcept {
+
+    //rajouter le fait qu'on puisse l'activer avec une touche
+    //rajouter le fait que ca lock sur l'ennemi que si il est visible ou alors que ca tire a travers les murs a voir
     if (isAimBotOn)
         return;
 
