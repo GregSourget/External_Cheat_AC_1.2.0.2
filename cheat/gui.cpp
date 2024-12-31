@@ -1,6 +1,8 @@
-#include "gui.h"
+ï»¿#include "gui.h"
 #include "cheat.h"
 #include "memory.h"
+#include "entities.h"
+#include "struct.h"
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_impl_dx9.h"
 #include "../imgui/imgui_impl_win32.h"
@@ -10,7 +12,9 @@ bool gui::isInfNadeOn = false;
 bool gui::isInfAmmoOn = false;
 bool gui::isArmorOn = false;
 bool gui::isNoRecoilOn = false;
-bool gui::isGetInfoOn = false;
+//bool gui::isGetInfoOn = false;
+bool gui::isESPOn = false;
+bool gui::isAimBotOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
@@ -271,6 +275,7 @@ void gui::RenderTrainerTab() noexcept
 	{
 		if (isInfAmmoOn)
 			cheat::infammoon();
+
 		else
 			cheat::infammooff();
 	}
@@ -283,7 +288,7 @@ void gui::RenderTrainerTab() noexcept
 			cheat::norecoiloff();
 	}
 
-	if (ImGui::Checkbox("GOD ARMOORRRR##Checkbox", &isArmorOn))
+	if (ImGui::Checkbox("Infinite Armor##Checkbox", &isArmorOn))
 	{
 		if (isArmorOn)
 			cheat::armoron();
@@ -292,32 +297,65 @@ void gui::RenderTrainerTab() noexcept
 	}
 }
 
-void gui::RenderAimbotTab() noexcept {
-	if (ImGui::Checkbox("Show Info##Checkbox", &cheat::isGetInfoOn)) {
-		// Pas besoin de condition supplémentaire ici si getinfoon gère déjà isGetInfoOn
-	}
-
-	if (cheat::isGetInfoOn) {
-		ImGui::Begin("Entity Info", nullptr);
-		ImGui::Text("EntityList : 0x%p", reinterpret_cast<void*>(cheat::entityL));
-		ImGui::Text("entity: 0x%p", reinterpret_cast<void*>(cheat::entity));
-		ImGui::Text("Head Value: %f", cheat::headValue); // Pour un int
-		ImGui::End();
+void gui::RenderAimbotTab() noexcept 
+{
+	if (ImGui::Checkbox("Aimbot##Checkbox", &isAimBotOn))
+	{
+		if (isAimBotOn)
+			cheat::aimboton();
+		else
+			cheat::aimbotoff();
 	}
 }
 
 
-
-
 void gui::RenderESPTab() noexcept
 {
-	if (ImGui::Checkbox("GodMode##Checkbox", &isGodModeOn))
+	if (ImGui::Checkbox("Wallhack##Checkbox", &isESPOn))
 	{
-		if (isGodModeOn)
-			cheat::godmodeon();
+		if (isESPOn)
+			cheat::espon();
 		else
-			cheat::godmodeoff();
+			cheat::espoff();
 	}
+}
+
+void gui::RenderPlayerInfoTab() noexcept
+{
+	//Entity number
+	int entityCount = GetEntityNb();
+	ImGui::Text("Number of Entities: %d", entityCount);
+
+	//Closest ennemy 
+	Vector3 closestEnemy = GetClosestEnemyPos();
+	ImGui::Text("Closest Enemy : (x : %.2f, y : %.2f, z : %.2f)", closestEnemy.x, closestEnemy.y, closestEnemy.z);
+	
+	//Entities info
+	std::vector<Entity> entities = GetEntitiesInfo();
+	std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
+
+	ImGui::Begin("Entities Info");
+
+	if (entities.empty()) {
+		ImGui::Text("No entities found.");
+	}
+	else {
+		for (size_t i = 0; i < entities.size(); ++i) {
+			const auto& entity = entities[i];
+
+			ImGui::Text("Health: %d", entity.health);
+			ImGui::Text("Team: %d", entity.teamNumber);
+			ImGui::Text("Head Position: (%.2f, %.2f, %.2f)",
+				entity.headPosition.x, entity.headPosition.y, entity.headPosition.z);
+
+			if (i < entityOffsets.size()) {
+				ImGui::Text("Entity Offset: 0x%p", reinterpret_cast<void*>(entityOffsets[i]));
+			}
+			ImGui::NewLine();
+		}
+	}
+
+	ImGui::End();
 }
 
 void gui::Render() noexcept
@@ -350,6 +388,12 @@ void gui::Render() noexcept
 		if (ImGui::BeginTabItem("ESP"))
 		{
 			RenderESPTab();
+			ImGui::EndTabItem();
+		}
+
+		if (ImGui::BeginTabItem("EntitiesInfo"))
+		{
+			RenderPlayerInfoTab();
 			ImGui::EndTabItem();
 		}
 

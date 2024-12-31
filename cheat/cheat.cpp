@@ -1,12 +1,13 @@
-#include <Windows.h>
+//#include <Windows.h>
 #include <vector>
 #include <iostream>
-#include <CommCtrl.h>
+//#include <CommCtrl.h>
 #include "../cheat/offset.h"
 #include "../cheat/memory.h"
 #include "../cheat/cheat.h"
+#include "struct.h"
+#include "entities.h"
 #include <thread>
-
 
 int cheat::updatedHealth = 100; //initalisation
 int cheat::updatedNade = 0;
@@ -22,11 +23,13 @@ bool cheat::isNoRecoilOn = false; // check
 bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;
-bool cheat::isGetInfoOn = false;
-std::uintptr_t cheat::headPtr = 0;
-std::uintptr_t cheat::entityL = 0;
-std::uintptr_t cheat::entity = 0;
-float cheat::headValue = 0.0f;
+//bool cheat::isGetInfoOn = false;
+bool cheat::isESPOn = false;
+bool cheat::isAimBotOn = false;
+//std::uintptr_t cheat::headPtr = 0;
+//std::uintptr_t cheat::entityL = 0;
+//std::uintptr_t cheat::entity = 0;
+//float cheat::headValue = 0.0f;
 
 void cheat::godmodeon() noexcept
 {
@@ -56,7 +59,6 @@ void cheat::godmodeon() noexcept
         }).detach();
 }
 
-
 void cheat::godmodeoff() noexcept
 {
     if (!isGodModeOn)
@@ -71,6 +73,7 @@ void cheat::godmodeoff() noexcept
 
     memory.Write<int>(healthAddress, initialHealth);
 }
+
 
 void cheat::infnadeon() noexcept
 {
@@ -94,13 +97,12 @@ void cheat::infnadeon() noexcept
         while (cheat::isInfNadeOn) {
             int currentNade = memory.Read<int>(nadeAddress);
             if (currentNade == 0) {
-                memory.Write<int>(nadeAddress, 1);
+                memory.Write<int>(nadeAddress, 1);   
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
         }).detach();
 }
-
 
 void cheat::infnadeoff() noexcept
 {
@@ -117,6 +119,7 @@ void cheat::infnadeoff() noexcept
     memory.Write<int>(nadeAddress, initialNade);
 
 }
+
 
 void cheat::infammoon() noexcept
 {
@@ -150,7 +153,7 @@ void cheat::infammoon() noexcept
             }
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
-    }).detach();
+        }).detach();
 }
 
 void cheat::infammooff() noexcept
@@ -169,7 +172,6 @@ void cheat::infammooff() noexcept
     memory.Write<int>(ammoAddress, initialAmmo);
     memory.Write<int>(pistolAmmoAddress, initialAmmoPistol);
 }
-
 
 
 void cheat::norecoilon() noexcept
@@ -210,6 +212,7 @@ void cheat::armoron() noexcept {
         }).detach();
 
 }
+
 void cheat::armoroff() noexcept {
     if (!isArmorOn)
         return;
@@ -225,6 +228,68 @@ void cheat::armoroff() noexcept {
 }
 
 
-void cheat::getinfoon() noexcept {
+//void cheat::getinfoon() noexcept {
+//
+//}
+
+
+void cheat::aimboton() noexcept {
+
+    //rajouter le fait qu'on puisse l'activer avec une touche
+    //rajouter le fait que ca lock sur l'ennemi que si il est visible ou alors que ca tire a travers les murs a voir
+    if (isAimBotOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto localPlayerPtr = memory.Read<std::uintptr_t>(moduleBase + localPlayer);
+    const auto yawAddress = localPlayerPtr + m_yaw;
+    const auto pitchAddress = localPlayerPtr + m_pitch;
+
+    isAimBotOn = true;
+
+    std::thread([yawAddress, pitchAddress, &memory]() {
+        while (cheat::isAimBotOn) {
+            std::vector<Entity> entities = GetEntitiesInfo();
+            Entity Player = entities[0];
+            Vector3 headPlayer = Player.headPosition;
+
+            Vector3 headEnemy = GetClosestEnemyPos();
+
+            //if there are no enemies alive, pause the aimbot
+            if (headEnemy.x == 0 && headEnemy.y == 0 && headEnemy.z == 0) {
+                continue;
+            }
+            float deltaX = headEnemy.x - headPlayer.x;
+            float deltaY = headEnemy.y - headPlayer.y;
+            float deltaZ = headEnemy.z - headPlayer.z;
+
+            float horizontalDistance = std::sqrt(deltaX * deltaX + deltaY * deltaY);
+            float pitch = std::atan2(deltaZ, horizontalDistance) * 180.0f / 3.14159f;
+            float yaw = std::atan2(deltaY, deltaX) * 180.0f / 3.14159f;
+            yaw = yaw + 90;
+
+            memory.Write<float>(yawAddress, yaw);
+            memory.Write<float>(pitchAddress, pitch);
+
+            std::this_thread::sleep_for(std::chrono::milliseconds(10));
+        }
+        }).detach();
+}
+
+
+
+void cheat::aimbotoff() noexcept {
+    if (!isAimBotOn)
+        return;
+    isAimBotOn = false;
+}
+
+
+void cheat::espon() noexcept {
+
+}
+
+void cheat::espoff() noexcept {
 
 }

@@ -8,7 +8,7 @@ namespace gui
 	extern HWND g_hEdit;
 
 	constexpr int WIDTH = 500;
-	constexpr int HEIGHT = 300;
+	constexpr int HEIGHT = 700;
 
 	inline bool isRunning = true;
 
@@ -34,7 +34,7 @@ namespace gui
 	void RenderESPTab() noexcept;
 	void RenderAimbotTab() noexcept;
 	void RenderTrainerTab() noexcept;
-	void ShowInfoWindow() ;
+	void RenderPlayerInfoTab() noexcept;
 
 	void BeginRender() noexcept;
 	void EndRender() noexcept;
@@ -66,7 +66,17 @@ namespace gui
 	extern bool isArmorOn;
 	extern int updatedArmor;
 
-	extern void getinfoon() noexcept;
-	extern bool isGetInfoOn;
+	/*extern void getinfoon() noexcept;
+	extern bool isGetInfoOn;*/
+
+	extern void aimboton() noexcept;
+	extern void aimbotoff() noexcept;
+	extern bool isAimBotOn;
+
+	extern void espon() noexcept;
+	extern void espoff() noexcept;
+	extern bool isESPOn;
+
+	
 	//extern int headValue;
 }
