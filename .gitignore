@@ -1,1 +1,13 @@
 .vs/
+
+#ignore build dir
+/build/
+/Debug/
+/Release/
+/x64/Debug/
+/x64/Release/
+
+# Ignore Debugging information
+*.vcxproj.user
+*.vs2019
+*.vs2017
