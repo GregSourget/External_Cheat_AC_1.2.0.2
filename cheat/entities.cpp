@@ -30,12 +30,11 @@ std::vector<std::uintptr_t> EntitiesOffset(){
         entityOffsets.push_back(entity_offset);
     }
 
-    return entityOffsets;
+    return entityOffsets; //all entities offset execpt Player's one
 }
 
 std::vector<Entity> GetEntitiesInfo(){
     auto& memory = getMemory();
-    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
 
     std::vector<Entity> entities;
     std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
@@ -73,10 +72,11 @@ Vector3 GetClosestEnemyPos() {
     float localZ = localPlayer.headPosition.z;
     int localTeam = localPlayer.teamNumber;
 
-    Vector3 closestEnemy;
+    Vector3 closestEnemy = {0.0f, 0.0f, 0.0f};
 
     for (size_t i = 1; i < entities.size(); ++i) {
         const auto& entity = entities[i];   //I use const auto to prevent my coordinates from being updated and distorting the comparison btw
+        
         if (entity.teamNumber == localTeam) {
             continue;
         }

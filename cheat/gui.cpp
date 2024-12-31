@@ -308,6 +308,7 @@ void gui::RenderAimbotTab() noexcept
 	}
 }
 
+
 void gui::RenderESPTab() noexcept
 {
 	if (ImGui::Checkbox("Wallhack##Checkbox", &isESPOn))
@@ -327,7 +328,7 @@ void gui::RenderPlayerInfoTab() noexcept
 
 	//Closest ennemy 
 	Vector3 closestEnemy = GetClosestEnemyPos();
-	ImGui::Text("Closest Enemy : (%.2f, %.2f, %.2f)", closestEnemy.x, closestEnemy.y, closestEnemy.z);
+	ImGui::Text("Closest Enemy : (x : %.2f, y : %.2f, z : %.2f)", closestEnemy.x, closestEnemy.y, closestEnemy.z);
 	
 	//Entities info
 	std::vector<Entity> entities = GetEntitiesInfo();

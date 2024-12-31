@@ -256,6 +256,10 @@ void cheat::aimboton() noexcept {
 
             Vector3 headEnemy = GetClosestEnemyPos();
 
+            //if there are no enemies alive, pause the aimbot
+            if (headEnemy.x == 0 && headEnemy.y == 0 && headEnemy.z == 0) {
+                continue;
+            }
             float deltaX = headEnemy.x - headPlayer.x;
             float deltaY = headEnemy.y - headPlayer.y;
             float deltaZ = headEnemy.z - headPlayer.z;
