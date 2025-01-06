@@ -8,6 +8,7 @@
 #include "struct.h"
 #include "entities.h"
 #include <thread>
+#include "drawesp.h"
 
 int cheat::updatedHealth = 100; //initalisation
 int cheat::updatedNade = 0;
@@ -237,6 +238,7 @@ void cheat::aimboton() noexcept {
 
     //rajouter le fait qu'on puisse l'activer avec une touche
     //rajouter le fait que ca lock sur l'ennemi que si il est visible ou alors que ca tire a travers les murs a voir
+    //le trasnformer en soft aim avec un fov
     if (isAimBotOn)
         return;
 
@@ -287,9 +289,35 @@ void cheat::aimbotoff() noexcept {
 
 
 void cheat::espon() noexcept {
+    if (isESPOn)
+        return;
 
+    isESPOn = true;
+
+    // Crée la fenêtre et initialise Direct3D
+    HWND hWnd = drawesp::CreateWindowApp(GetModuleHandle(NULL), SW_SHOW); // Crée la fenêtre
+    if (!drawesp::InitDirect3D(hWnd)) { // Initialise Direct3D
+        // Si l'initialisation échoue, affiche un message d'erreur et arrête
+        MessageBoxA(nullptr, "Erreur d'initialisation de Direct3D.", "Erreur", MB_ICONERROR);
+        isESPOn = false;
+        return;
+    }
+
+    // Vous pouvez ensuite démarrer la boucle de rendu dans un thread ou une boucle de mise à jour
+    // Pour l'instant, nous rendons une fenêtre noire.
+    std::thread([hWnd]() {
+        // Boucle de rendu pour afficher des frames
+        while (isESPOn) {
+            drawesp::RenderFrame();  // Rendu de l'écran
+            std::this_thread::sleep_for(std::chrono::milliseconds(16));  // Attendre avant de rendre à nouveau
+        }
+        drawesp::CleanupDirect3D(); // Nettoyer Direct3D lorsque terminé
+        }).detach(); // Détacher le thread pour qu'il s'exécute en arrière-plan
 }
 
 void cheat::espoff() noexcept {
+    if (!isESPOn)
+        return;
+    isESPOn = false;
 
 }
