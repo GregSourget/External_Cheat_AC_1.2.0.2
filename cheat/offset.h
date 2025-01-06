@@ -37,7 +37,8 @@ constexpr auto dwViewMatrix = 0x501AE8;
 constexpr auto m_Nades = 0x158;
 constexpr auto m_Ammo = 0x150;
 constexpr auto m_AmmoPistol = 0x13C;
-constexpr auto m_recoil1 = 0x63786;
+constexpr auto m_recoil1 = 0x0005BAAD;
+
 
 
 //recoil ac_client.exe+63786 - 50                    - push eax

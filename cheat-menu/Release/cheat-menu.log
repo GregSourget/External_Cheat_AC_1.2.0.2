@@ -1,6 +1,21 @@
-﻿  Génération de code en cours
-  26 of 1721 functions ( 1.5%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    34 functions had inline decision re-evaluated but remain unchanged
+﻿  cheat.cpp
+C:\Users\ninop\Downloads\Cheat_AC_project-main (2)\Cheat_AC_project-main\cheat\cheat.cpp(192,25): warning C4309: 'initialisation' : troncation de valeur de constante
+C:\Users\ninop\Downloads\Cheat_AC_project-main (2)\Cheat_AC_project-main\cheat\cheat.cpp(200,50): warning C4309: 'argument' : troncation de valeur de constante
+  entities.cpp
+C:\Users\ninop\Downloads\Cheat_AC_project-main (2)\Cheat_AC_project-main\cheat\entities.cpp(88,24): warning C4244: 'initialisation' : conversion de 'double' en 'float', perte possible de données
+C:\Users\ninop\Downloads\Cheat_AC_project-main (2)\Cheat_AC_project-main\cheat\entities.cpp(95,52): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+  gui.cpp
+  main.cpp
+  memory.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx9.cpp
+  imgui_impl_win32.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  Génération de code en cours
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  All 1744 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Fin de la génération du code
-  cheat-menu.vcxproj -> C:\Users\profile1\Documents\Programmation\Cheat_AC_project\Release\cheat-menu.exe
+  cheat-menu.vcxproj -> C:\Users\ninop\Downloads\Cheat_AC_project-main (2)\Cheat_AC_project-main\Release\cheat-menu.exe

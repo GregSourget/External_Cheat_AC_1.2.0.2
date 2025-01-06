@@ -18,6 +18,7 @@ int initialNade = 0;
 int initialAmmo = 0;
 int initialAmmoPistol = 0;
 int initialArmor = 0;
+int initialrecoil = 0;
 bool cheat::isArmorOn = false;
 bool cheat::isNoRecoilOn = false; // check 
 bool cheat::isInfNadeOn = false;
@@ -176,12 +177,44 @@ void cheat::infammooff() noexcept
 
 void cheat::norecoilon() noexcept
 {
+    if (isNoRecoilOn)
+        return;
 
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto recoilAddress = moduleBase + m_recoil1;
+
+
+    initialrecoil = memory.Read<int>(recoilAddress);
+
+    isNoRecoilOn = true;
+
+    int updatedrecoil = 3645135832;
+    memory.Write<int>(recoilAddress, updatedrecoil);
+
+
+    std::thread([recoilAddress, &memory]() {
+        while (cheat::isNoRecoilOn) {
+            int currentrecoil = memory.Read<int>(recoilAddress);
+            if (currentrecoil > 3645135832) {
+                memory.Write<int>(recoilAddress, 3645135832);
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+        }
+        }).detach();
 }
 
 void cheat::norecoiloff() noexcept
 {
+    if (!isNoRecoilOn)
+        return;
 
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto recoilAddress = moduleBase + m_recoil1;
+
+    isNoRecoilOn = false;
+    memory.Write<int>(recoilAddress, initialrecoil);
 }
 
 
