@@ -293,26 +293,6 @@ void cheat::espon() noexcept {
         return;
 
     isESPOn = true;
-
-    // Crée la fenêtre et initialise Direct3D
-    HWND hWnd = drawesp::CreateWindowApp(GetModuleHandle(NULL), SW_SHOW); // Crée la fenêtre
-    if (!drawesp::InitDirect3D(hWnd)) { // Initialise Direct3D
-        // Si l'initialisation échoue, affiche un message d'erreur et arrête
-        MessageBoxA(nullptr, "Erreur d'initialisation de Direct3D.", "Erreur", MB_ICONERROR);
-        isESPOn = false;
-        return;
-    }
-
-    // Vous pouvez ensuite démarrer la boucle de rendu dans un thread ou une boucle de mise à jour
-    // Pour l'instant, nous rendons une fenêtre noire.
-    std::thread([hWnd]() {
-        // Boucle de rendu pour afficher des frames
-        while (isESPOn) {
-            drawesp::RenderFrame();  // Rendu de l'écran
-            std::this_thread::sleep_for(std::chrono::milliseconds(16));  // Attendre avant de rendre à nouveau
-        }
-        drawesp::CleanupDirect3D(); // Nettoyer Direct3D lorsque terminé
-        }).detach(); // Détacher le thread pour qu'il s'exécute en arrière-plan
 }
 
 void cheat::espoff() noexcept {

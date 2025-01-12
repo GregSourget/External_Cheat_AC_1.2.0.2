@@ -1,3 +1,6 @@
-﻿drawesp.obj : error LNK2001: symbole externe non résolu "struct IDirect3DDevice9 * drawesp::pD3DDevice" (?pD3DDevice@drawesp@@3PAUIDirect3DDevice9@@A)
-drawesp.obj : error LNK2001: symbole externe non résolu "struct IDirect3D9 * drawesp::pD3D" (?pD3D@drawesp@@3PAUIDirect3D9@@A)
-C:\Users\profile1\Documents\Programmation\Cheat_AC_project\Release\cheat-menu.exe : fatal error LNK1120: 2 externes non résolus
+﻿  drawesp.cpp
+  Génération de code en cours
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+  All 1721 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Fin de la génération du code
+  cheat-menu.vcxproj -> C:\Users\profile1\Documents\Programmation\Cheat_AC_project\Release\cheat-menu.exe
