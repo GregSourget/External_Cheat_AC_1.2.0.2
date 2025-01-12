@@ -164,6 +164,7 @@
     <ClCompile Include="cheat\drawesp.cpp" />
     <ClCompile Include="cheat\entities.cpp" />
     <ClCompile Include="cheat\gui.cpp" />
+    <ClCompile Include="cheat\keyboard_shortcut.cpp" />
     <ClCompile Include="cheat\main.cpp" />
     <ClCompile Include="cheat\memory.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
