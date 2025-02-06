@@ -7,11 +7,12 @@ void listenForHotkeys() {
     while (true) {
         if (GetAsyncKeyState('A') & 0x8000) {
             if (cheat::isAimBotOn) {
-                cheat::aimboton();
-            }
-            else {
                 cheat::aimbotoff();
             }
+            else {
+                cheat::aimboton();
+            }
+
             while (GetAsyncKeyState('A') & 0x8000) {
                 std::this_thread::sleep_for(std::chrono::milliseconds(100));
             }
