@@ -34,7 +34,7 @@ namespace gui
 	void RenderESPTab() noexcept;
 	void RenderAimbotTab() noexcept;
 	void RenderTrainerTab() noexcept;
-	void ShowInfoWindow() ;
+	void ShowInfoWindow();
 
 	void BeginRender() noexcept;
 	void EndRender() noexcept;
@@ -47,6 +47,11 @@ namespace gui
 	extern bool isGodModeOn;
 	extern int updatedHealth;
 
+	extern void infarmoron() noexcept;
+	extern void infarmoroff() noexcept;
+	extern bool isArmorOn;
+	extern int updatedArmor;
+
 	extern void infnadeon() noexcept;
 	extern void infnadeoff() noexcept;
 	extern bool isInfNadeOn;
@@ -57,26 +62,24 @@ namespace gui
 	extern bool isInfAmmoOn;
 	extern int updatedAmmo;
 
+	extern void rapidfireon() noexcept;
+	extern void rapidfireoff() noexcept;
+	extern bool isRapidFireOn;
+	extern int updatedFire;
+
+
 	extern void norecoilon() noexcept;
 	extern void norecoiloff() noexcept;
 	extern bool isNoRecoilOn;
+	extern int updatedRecoil;
 
-	extern void Armoron() noexcept;
-	extern void Armoroff() noexcept;
-	extern bool isArmorOn;
-	extern int updatedArmor;
+	/*extern void flyon() noexcept;
+	extern void flyoff() noexcept;
+	extern bool isFlyOn;
+	extern int isFlyOff;*/
+
 
 	extern void getinfoon() noexcept;
 	extern bool isGetInfoOn;
 	//extern int headValue;
-
-	void speedhackon() noexcept;
-	void speedhackoff() noexcept;
-	extern bool isSpeedHackOn;
-	extern int updatedSpeed;
-
-	void rapidfireon() noexcept;
-	void rapidfireoff() noexcept;
-	extern bool isRapidFireOn;
-	extern int updatedFire;
 }

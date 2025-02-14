@@ -6,18 +6,18 @@
 #include "../imgui/imgui_impl_win32.h"
 
 bool gui::isGodModeOn = false;
+bool gui::isArmorOn = false;
 bool gui::isInfNadeOn = false;
 bool gui::isInfAmmoOn = false;
-bool gui::isArmorOn = false;
 bool gui::isNoRecoilOn = false;
 bool gui::isGetInfoOn = false;
-bool gui::isSpeedHackOn = false;
 bool gui::isRapidFireOn = false;
+//bool gui::isFlyOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
-int gui::updatedArmor = 0;
 int gui::updatedFire = 0;
+int gui::updatedArmor = 0;
 Memory memory("ac_client.exe");
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(
@@ -261,6 +261,13 @@ void gui::RenderTrainerTab() noexcept
 		else
 			cheat::godmodeoff();
 	}
+	if (ImGui::Checkbox("GodArmor##Checkbox", &isArmorOn))
+	{
+		if (isArmorOn)
+			cheat::armoron();
+		else
+			cheat::armoroff();
+	}
 
 	if (ImGui::Checkbox("Infinite Nade##Checkbox", &isInfNadeOn))
 	{
@@ -278,6 +285,14 @@ void gui::RenderTrainerTab() noexcept
 			cheat::infammooff();
 	}
 
+	if (ImGui::Checkbox("fire##Checkbox", &isRapidFireOn))
+	{
+		if (isRapidFireOn)
+			cheat::rapidfireon();
+		else
+			cheat::rapidfireoff();
+	}
+
 	if (ImGui::Checkbox("No Recoil##Checkbox", &isNoRecoilOn))
 	{
 		if (isNoRecoilOn)
@@ -285,35 +300,21 @@ void gui::RenderTrainerTab() noexcept
 		else
 			cheat::norecoiloff();
 	}
-
-	if (ImGui::Checkbox("GOD ARMOORRRR##Checkbox", &isArmorOn))
+	/*if (ImGui::Checkbox("fly##Checkbox", &isFlyOn))
 	{
-		if (isArmorOn)
-			cheat::armoron();
+		if (isFlyOn)
+			cheat::flyon();
 		else
-			cheat::armoroff();
-	}
+			cheat::flyoff();
+	}*/
 
-	if (ImGui::Checkbox("Speed Hack##Checkbox", &isSpeedHackOn))
-	{
-		if (isSpeedHackOn)
-			cheat::speedhackon();
-		else
-			cheat::speedhackoff();
-	}
 
-		if (ImGui::Checkbox("fire##Checkbox", &isRapidFireOn))
-	{
-		if (isRapidFireOn)
-			cheat::rapidfireon();
-		else
-			cheat::rapidfireoff();
-	}
+
 }
 
 void gui::RenderAimbotTab() noexcept {
 	if (ImGui::Checkbox("Show Info##Checkbox", &cheat::isGetInfoOn)) {
-		// Pas besoin de condition supplémentaire ici si getinfoon gère déjà isGetInfoOn
+		// Pas besoin de condition suppl mentaire ici si getinfoon g re d j  isGetInfoOn
 	}
 
 	if (cheat::isGetInfoOn) {
@@ -336,6 +337,14 @@ void gui::RenderESPTab() noexcept
 			cheat::godmodeon();
 		else
 			cheat::godmodeoff();
+	}
+
+	if (ImGui::Checkbox("No Recoil##Checkbox", &isNoRecoilOn))
+	{
+		if (isNoRecoilOn)
+			cheat::norecoilon();
+		else
+			cheat::norecoiloff();
 	}
 }
 

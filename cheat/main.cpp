@@ -14,7 +14,7 @@ int __stdcall wWinMain(
 	gui::CreateDevice();
 	gui::CreateImGui();
 	cheat::getinfoon();
-	
+
 
 	while (gui::isRunning)
 	{
@@ -31,4 +31,3 @@ int __stdcall wWinMain(
 
 	return EXIT_SUCCESS;
 }
-

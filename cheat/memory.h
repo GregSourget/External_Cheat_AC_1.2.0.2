@@ -87,23 +87,23 @@ public:
 	{
 		::WriteProcessMemory(processHandle, reinterpret_cast<void*>(address), &value, sizeof(T), NULL);
 	}
-	// Surcharge pour écrire un tableau de bytes
+	// Surcharge pour  crire un tableau de bytes
 	void Write2(const uintptr_t& address, const BYTE* bytes, size_t size) const noexcept {
 		::WriteProcessMemory(processHandle, reinterpret_cast<void*>(address), bytes, size, NULL);
 	}
 
-	// Surcharge pour écrire un std::vector de bytes
+	// Surcharge pour  crire un std::vector de bytes
 	void Write3(const uintptr_t& address, const std::vector<BYTE>& bytes) const noexcept {
 		::WriteProcessMemory(processHandle, reinterpret_cast<void*>(address), bytes.data(), bytes.size(), NULL);
 	}
 
-	// Dans votre classe Memory, ajoutez une méthode pour changer la protection de la mémoire
+	// Dans votre classe Memory, ajoutez une m thode pour changer la protection de la m moire
 	bool ChangeMemoryProtection(const std::uintptr_t& address, SIZE_T size, DWORD newProtect, DWORD& oldProtect) const noexcept {
 		return ::VirtualProtectEx(processHandle, reinterpret_cast<LPVOID>(address), size, newProtect, &oldProtect) != 0;
 	}
 
 };
 
-// Déclaration de la fonction d'accès
+// D claration de la fonction d'acc s
 Memory& getMemory();
 
