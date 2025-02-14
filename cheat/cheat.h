@@ -24,7 +24,6 @@ namespace cheat
 	void rapidfireoff() noexcept;
 	extern bool isRapidFireOn;
 
-	extern int updatedRecoil;
 	void norecoilon() noexcept;
 	void norecoiloff() noexcept;
 	extern bool isNoRecoilOn;
