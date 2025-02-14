@@ -277,19 +277,8 @@ void cheat::aimboton() noexcept {
         }).detach();
 }
 
-
-
 void cheat::aimbotoff() noexcept {
     if (!isAimBotOn)
         return;
     isAimBotOn = false;
-}
-
-
-void cheat::espon() noexcept {
-
-}
-
-void cheat::espoff() noexcept {
-
 }
