@@ -19,7 +19,12 @@ namespace cheat
 	void infammooff() noexcept;
 	extern bool isInfAmmoOn;
 
+	extern int updatedFire;
+	void rapidfireon() noexcept;
+	void rapidfireoff() noexcept;
+	extern bool isRapidFireOn;
 
+	extern int updatedRecoil;
 	void norecoilon() noexcept;
 	void norecoiloff() noexcept;
 	extern bool isNoRecoilOn;

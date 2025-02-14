@@ -31,8 +31,6 @@ namespace gui
 	void CreateImGui() noexcept;
 	void DestroyImGui() noexcept;
 
-	void RenderESPTab() noexcept;
-	void RenderAimbotTab() noexcept;
 	void RenderTrainerTab() noexcept;
 	void RenderPlayerInfoTab() noexcept;
 
@@ -56,6 +54,11 @@ namespace gui
 	extern void infammooff() noexcept;
 	extern bool isInfAmmoOn;
 	extern int updatedAmmo;
+
+	extern void rapidfireon() noexcept;
+	extern void rapidfireoff() noexcept;
+	extern bool isRapidFireOn;
+	extern int updatedFire;
 
 	extern void norecoilon() noexcept;
 	extern void norecoiloff() noexcept;

@@ -35,5 +35,5 @@ constexpr auto m_AmmoPistol = 0x13C;
 constexpr auto m_recoil1 = 0x63786;
 
 // Hacks
-constexpr auto rapidFire = 0x164;
+constexpr auto rapidFire = 0x4637E4;
 

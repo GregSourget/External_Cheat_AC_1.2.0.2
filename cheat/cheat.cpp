@@ -13,16 +13,19 @@ int cheat::updatedHealth = 100; //initalisation
 int cheat::updatedNade = 0;
 int cheat::updatedAmmo = 20;
 int cheat::updatedArmor = 0;
+int cheat::updatedFire = 0;
 int initialHealth = 0;
 int initialNade = 0;
 int initialAmmo = 0;
 int initialAmmoPistol = 0;
 int initialArmor = 0;
+int initialFire = 0;
 bool cheat::isArmorOn = false;
-bool cheat::isNoRecoilOn = false; // check 
+bool cheat::isNoRecoilOn = false; 
 bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;
+bool cheat::isRapidFireOn = false;
 //bool cheat::isGetInfoOn = false;
 //bool cheat::isESPOn = false;
 bool cheat::isAimBotOn = false;
@@ -184,6 +187,38 @@ void cheat::norecoiloff() noexcept
 
 }
 
+void cheat::rapidfireon() noexcept {
+
+    if (isRapidFireOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto entityListPtr = memory.Read<std::uintptr_t>(moduleBase + entityList);
+    const auto fireAddress = entityListPtr + rapidFire;
+
+    initialFire = memory.Read<int>(fireAddress);
+
+    isRapidFireOn = true;
+
+    int updatedFire = 1988823685;
+    memory.Write<int>(fireAddress, updatedFire);
+
+}
+void cheat::rapidfireoff() noexcept {
+
+    if (!isRapidFireOn)
+        return;
+
+    auto& memory = getMemory();
+    const auto moduleBase = memory.GetModuleAddress("ac_client.exe");
+    const auto entityListPtr = memory.Read<std::uintptr_t>(moduleBase + entityList);
+    const auto fireAddress = entityListPtr + rapidFire;
+
+    isRapidFireOn = false;
+
+    memory.Write<int>(fireAddress, initialFire);
+}
 
 void cheat::armoron() noexcept {
 

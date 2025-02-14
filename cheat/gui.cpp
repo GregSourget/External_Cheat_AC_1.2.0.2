@@ -11,6 +11,7 @@ bool gui::isGodModeOn = false;
 bool gui::isInfNadeOn = false;
 bool gui::isInfAmmoOn = false;
 bool gui::isArmorOn = false;
+bool gui::isRapidFireOn = false;
 bool gui::isNoRecoilOn = false;
 //bool gui::isGetInfoOn = false;
 //bool gui::isESPOn = false;
@@ -19,6 +20,7 @@ int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
 int gui::updatedAmmo = 0;
 int gui::updatedArmor = 0;
+int gui::updatedFire = 0;
 Memory memory("ac_client.exe");
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(
@@ -286,6 +288,14 @@ void gui::RenderTrainerTab() noexcept
 			cheat::norecoilon();
 		else
 			cheat::norecoiloff();
+	}
+
+	if (ImGui::Checkbox("fire##Checkbox", &isRapidFireOn))
+	{
+		if (isRapidFireOn)
+			cheat::rapidfireon();
+		else
+			cheat::rapidfireoff();
 	}
 
 	if (ImGui::Checkbox("Infinite Armor##Checkbox", &isArmorOn))
