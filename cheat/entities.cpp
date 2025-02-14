@@ -92,7 +92,7 @@ Vector3 GetClosestEnemyPos() {
 
             closestEnemy.x = entity.headPosition.x;
             closestEnemy.y = entity.headPosition.y;
-            closestEnemy.z = entity.headPosition.z + 0.05; //+0.05 because the vecthead is center in the neck not the head
+            closestEnemy.z = entity.headPosition.z + 0.05; //+0.05 to rise to the height of the head vector
         }
     }
     return closestEnemy;

@@ -315,23 +315,6 @@ void gui::RenderTrainerTab() noexcept
 	}
 }
 
-//void gui::RenderAimbotTab() noexcept 
-//{
-//	
-//}
-
-
-//void gui::RenderESPTab() noexcept
-//{
-//	if (ImGui::Checkbox("Wallhack##Checkbox", &isESPOn))
-//	{
-//		if (isESPOn)
-//			cheat::espon();
-//		else
-//			cheat::espoff();
-//	}
-//}
-
 void gui::RenderPlayerInfoTab() noexcept
 {
 	//Entity number
@@ -390,18 +373,6 @@ void gui::Render() noexcept
 			RenderTrainerTab();
 			ImGui::EndTabItem();
 		}
-
-		/*if (ImGui::BeginTabItem("Aimbot"))
-		{
-			RenderAimbotTab();
-			ImGui::EndTabItem();
-		}*/
-
-		/*if (ImGui::BeginTabItem("ESP"))
-		{
-			RenderESPTab();
-			ImGui::EndTabItem();
-		}*/
 
 		if (ImGui::BeginTabItem("EntitiesInfo"))
 		{

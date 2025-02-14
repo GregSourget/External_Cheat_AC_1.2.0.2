@@ -69,17 +69,7 @@ namespace gui
 	extern bool isArmorOn;
 	extern int updatedArmor;
 
-	/*extern void getinfoon() noexcept;
-	extern bool isGetInfoOn;*/
-
 	extern void aimboton() noexcept;
 	extern void aimbotoff() noexcept;
 	extern bool isAimBotOn;
-
-	/*extern void espon() noexcept;
-	extern void espoff() noexcept;
-	extern bool isESPOn;*/
-
-	
-	//extern int headValue;
 }

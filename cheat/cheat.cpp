@@ -1,7 +1,6 @@
 //#include <Windows.h>
 #include <vector>
 #include <iostream>
-//#include <CommCtrl.h>
 #include "../cheat/offset.h"
 #include "../cheat/memory.h"
 #include "../cheat/cheat.h"
@@ -9,7 +8,7 @@
 #include "entities.h"
 #include <thread>
 
-int cheat::updatedHealth = 100; //initalisation
+int cheat::updatedHealth = 100;
 int cheat::updatedNade = 0;
 int cheat::updatedAmmo = 20;
 int cheat::updatedArmor = 0;
@@ -27,16 +26,10 @@ bool cheat::isInfNadeOn = false;
 bool cheat::isInfAmmoOn = false;
 bool cheat::isGodModeOn = false;
 bool cheat::isRapidFireOn = false;
-//bool cheat::isGetInfoOn = false;
-//bool cheat::isESPOn = false;
 bool cheat::isAimBotOn = false;
-//std::uintptr_t cheat::headPtr = 0;
-//std::uintptr_t cheat::entityL = 0;
-//std::uintptr_t cheat::entity = 0;
-//float cheat::headValue = 0.0f;
 
-void cheat::godmodeon() noexcept
-{
+
+void cheat::godmodeon() noexcept {
     if (isGodModeOn)
         return;
 
@@ -63,8 +56,7 @@ void cheat::godmodeon() noexcept
         }).detach();
 }
 
-void cheat::godmodeoff() noexcept
-{
+void cheat::godmodeoff() noexcept {
     if (!isGodModeOn)
         return;
 
@@ -78,9 +70,7 @@ void cheat::godmodeoff() noexcept
     memory.Write<int>(healthAddress, initialHealth);
 }
 
-
-void cheat::infnadeon() noexcept
-{
+void cheat::infnadeon() noexcept {
     if (isInfNadeOn)
         return;
 
@@ -108,8 +98,7 @@ void cheat::infnadeon() noexcept
         }).detach();
 }
 
-void cheat::infnadeoff() noexcept
-{
+void cheat::infnadeoff() noexcept {
     if (!isInfNadeOn)
         return;
 
@@ -125,8 +114,7 @@ void cheat::infnadeoff() noexcept
 }
 
 
-void cheat::infammoon() noexcept
-{
+void cheat::infammoon() noexcept {
     if (isInfAmmoOn)
         return;
 
@@ -160,8 +148,7 @@ void cheat::infammoon() noexcept
         }).detach();
 }
 
-void cheat::infammooff() noexcept
-{
+void cheat::infammooff() noexcept {
     if (!isInfAmmoOn)
         return;
 
@@ -178,8 +165,7 @@ void cheat::infammooff() noexcept
 }
 
 
-void cheat::norecoilon() noexcept
-{
+void cheat::norecoilon() noexcept {
     if (isNoRecoilOn)
         return;
 
@@ -207,8 +193,7 @@ void cheat::norecoilon() noexcept
         }).detach();
 }
 
-void cheat::norecoiloff() noexcept
-{
+void cheat::norecoiloff() noexcept {
     if (!isNoRecoilOn)
         return;
 
@@ -239,6 +224,7 @@ void cheat::rapidfireon() noexcept {
     memory.Write<int>(fireAddress, updatedFire);
 
 }
+
 void cheat::rapidfireoff() noexcept {
 
     if (!isRapidFireOn)
@@ -279,10 +265,10 @@ void cheat::armoron() noexcept {
             std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
         }).detach();
-
 }
 
 void cheat::armoroff() noexcept {
+
     if (!isArmorOn)
         return;
 
@@ -296,16 +282,8 @@ void cheat::armoroff() noexcept {
     memory.Write<int>(armorAddress, initialArmor);
 }
 
-
-//void cheat::getinfoon() noexcept {
-//
-//}
-
-
 void cheat::aimboton() noexcept {
 
-    //rajouter le fait qu'on puisse l'activer avec une touche
-    //rajouter le fait que ca lock sur l'ennemi que si il est visible ou alors que ca tire a travers les murs a voir
     if (isAimBotOn)
         return;
 
@@ -347,7 +325,9 @@ void cheat::aimboton() noexcept {
 }
 
 void cheat::aimbotoff() noexcept {
+
     if (!isAimBotOn)
         return;
+
     isAimBotOn = false;
 }
