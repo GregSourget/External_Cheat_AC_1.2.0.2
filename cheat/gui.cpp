@@ -13,8 +13,6 @@ bool gui::isInfAmmoOn = false;
 bool gui::isArmorOn = false;
 bool gui::isRapidFireOn = false;
 bool gui::isNoRecoilOn = false;
-//bool gui::isGetInfoOn = false;
-//bool gui::isESPOn = false;
 bool gui::isAimBotOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
@@ -24,364 +22,391 @@ int gui::updatedFire = 0;
 Memory memory("ac_client.exe");
 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(
-	HWND window,
-	UINT message,
-	WPARAM wideParameter,
-	LPARAM longParameter
+    HWND window,
+    UINT message,
+    WPARAM wideParameter,
+    LPARAM longParameter
 );
 
 long __stdcall WindowProcess(
-	HWND window,
-	UINT message,
-	WPARAM wideParameter,
-	LPARAM longParameter)
+    HWND window,
+    UINT message,
+    WPARAM wideParameter,
+    LPARAM longParameter)
 {
-	if (ImGui_ImplWin32_WndProcHandler(window, message, wideParameter, longParameter))
-		return true;
+    if (ImGui_ImplWin32_WndProcHandler(window, message, wideParameter, longParameter))
+        return true;
 
-	switch (message)
-	{
-	case WM_SIZE: {
-		if (gui::device && wideParameter != SIZE_MINIMIZED)
-		{
-			gui::presentParameters.BackBufferWidth = LOWORD(longParameter);
-			gui::presentParameters.BackBufferHeight = HIWORD(longParameter);
-			gui::ResetDevice();
-		}
-	}return 0;
+    switch (message)
+    {
+    case WM_SIZE: {
+        if (gui::device && wideParameter != SIZE_MINIMIZED)
+        {
+            gui::presentParameters.BackBufferWidth = LOWORD(longParameter);
+            gui::presentParameters.BackBufferHeight = HIWORD(longParameter);
+            gui::ResetDevice();
+        }
+    }return 0;
 
-	case WM_SYSCOMMAND: {
-		if ((wideParameter & 0xfff0) == SC_KEYMENU)
-			return 0;
-	}break;
+    case WM_SYSCOMMAND: {
+        if ((wideParameter & 0xfff0) == SC_KEYMENU)
+            return 0;
+    }break;
 
-	case WM_DESTROY: {
-		PostQuitMessage(0);
-	}return 0;
+    case WM_DESTROY: {
+        PostQuitMessage(0);
+    }return 0;
 
-	case WM_LBUTTONDOWN: {
-		gui::position = MAKEPOINTS(longParameter);
-	}return 0;
+    case WM_LBUTTONDOWN: {
+        gui::position = MAKEPOINTS(longParameter);
+    }return 0;
 
-	case WM_MOUSEMOVE: {
-		if (wideParameter == MK_LBUTTON)
-		{
-			const auto points = MAKEPOINTS(longParameter);
-			auto rect = ::RECT{ };
+    case WM_MOUSEMOVE: {
+        if (wideParameter == MK_LBUTTON)
+        {
+            const auto points = MAKEPOINTS(longParameter);
+            auto rect = ::RECT{ };
 
-			GetWindowRect(gui::window, &rect);
+            GetWindowRect(gui::window, &rect);
 
-			rect.left += points.x - gui::position.x;
-			rect.top += points.y - gui::position.y;
+            rect.left += points.x - gui::position.x;
+            rect.top += points.y - gui::position.y;
 
-			if (gui::position.x >= 0 &&
-				gui::position.x <= gui::WIDTH &&
-				gui::position.y >= 0 && gui::position.y <= 19)
-				SetWindowPos(
-					gui::window,
-					HWND_TOPMOST,
-					rect.left,
-					rect.top,
-					0, 0,
-					SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOZORDER
-				);
-		}
+            if (gui::position.x >= 0 &&
+                gui::position.x <= gui::WIDTH &&
+                gui::position.y >= 0 && gui::position.y <= 19)
+                SetWindowPos(
+                    gui::window,
+                    HWND_TOPMOST,
+                    rect.left,
+                    rect.top,
+                    0, 0,
+                    SWP_SHOWWINDOW | SWP_NOSIZE | SWP_NOZORDER
+                );
+        }
 
-	}return 0;
+    }return 0;
 
-	}
+    }
 
-	return DefWindowProc(window, message, wideParameter, longParameter);
+    return DefWindowProc(window, message, wideParameter, longParameter);
 }
 
 void gui::CreateHWindow(const char* windowName) noexcept
 {
-	windowClass.cbSize = sizeof(WNDCLASSEX);
-	windowClass.style = CS_CLASSDC;
-	windowClass.lpfnWndProc = WindowProcess;
-	windowClass.cbClsExtra = 0;
-	windowClass.cbWndExtra = 0;
-	windowClass.hInstance = GetModuleHandleA(0);
-	windowClass.hIcon = 0;
-	windowClass.hCursor = 0;
-	windowClass.hbrBackground = 0;
-	windowClass.lpszMenuName = 0;
-	windowClass.lpszClassName = "class001";
-	windowClass.hIconSm = 0;
+    windowClass.cbSize = sizeof(WNDCLASSEX);
+    windowClass.style = CS_CLASSDC;
+    windowClass.lpfnWndProc = WindowProcess;
+    windowClass.cbClsExtra = 0;
+    windowClass.cbWndExtra = 0;
+    windowClass.hInstance = GetModuleHandleA(0);
+    windowClass.hIcon = 0;
+    windowClass.hCursor = 0;
+    windowClass.hbrBackground = 0;
+    windowClass.lpszMenuName = 0;
+    windowClass.lpszClassName = "class001";
+    windowClass.hIconSm = 0;
 
-	RegisterClassEx(&windowClass);
+    RegisterClassEx(&windowClass);
 
-	window = CreateWindowEx(
-		0,
-		"class001",
-		windowName,
-		WS_POPUP,
-		100,
-		100,
-		WIDTH,
-		HEIGHT,
-		0,
-		0,
-		windowClass.hInstance,
-		0
-	);
+    window = CreateWindowEx(
+        0,
+        "class001",
+        windowName,
+        WS_POPUP,
+        100,
+        100,
+        WIDTH,
+        HEIGHT,
+        0,
+        0,
+        windowClass.hInstance,
+        0
+    );
 
-	ShowWindow(window, SW_SHOWDEFAULT);
-	UpdateWindow(window);
+    ShowWindow(window, SW_SHOWDEFAULT);
+    UpdateWindow(window);
 }
 
 void gui::DestroyHWindow() noexcept
 {
-	DestroyWindow(window);
-	UnregisterClass(windowClass.lpszClassName, windowClass.hInstance);
+    DestroyWindow(window);
+    UnregisterClass(windowClass.lpszClassName, windowClass.hInstance);
 }
 
 bool gui::CreateDevice() noexcept
 {
-	d3d = Direct3DCreate9(D3D_SDK_VERSION);
+    d3d = Direct3DCreate9(D3D_SDK_VERSION);
 
-	if (!d3d)
-		return false;
+    if (!d3d)
+        return false;
 
-	ZeroMemory(&presentParameters, sizeof(presentParameters));
+    ZeroMemory(&presentParameters, sizeof(presentParameters));
 
-	presentParameters.Windowed = TRUE;
-	presentParameters.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	presentParameters.BackBufferFormat = D3DFMT_UNKNOWN;
-	presentParameters.EnableAutoDepthStencil = TRUE;
-	presentParameters.AutoDepthStencilFormat = D3DFMT_D16;
-	presentParameters.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
+    presentParameters.Windowed = TRUE;
+    presentParameters.SwapEffect = D3DSWAPEFFECT_DISCARD;
+    presentParameters.BackBufferFormat = D3DFMT_UNKNOWN;
+    presentParameters.EnableAutoDepthStencil = TRUE;
+    presentParameters.AutoDepthStencilFormat = D3DFMT_D16;
+    presentParameters.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
 
-	if (d3d->CreateDevice(
-		D3DADAPTER_DEFAULT,
-		D3DDEVTYPE_HAL,
-		window,
-		D3DCREATE_HARDWARE_VERTEXPROCESSING,
-		&presentParameters,
-		&device) < 0)
-		return false;
+    if (d3d->CreateDevice(
+        D3DADAPTER_DEFAULT,
+        D3DDEVTYPE_HAL,
+        window,
+        D3DCREATE_HARDWARE_VERTEXPROCESSING,
+        &presentParameters,
+        &device) < 0)
+        return false;
 
-	return true;
+    return true;
 }
 
 void gui::ResetDevice() noexcept
 {
-	ImGui_ImplDX9_InvalidateDeviceObjects();
+    ImGui_ImplDX9_InvalidateDeviceObjects();
 
-	const auto result = device->Reset(&presentParameters);
+    const auto result = device->Reset(&presentParameters);
 
-	if (result == D3DERR_INVALIDCALL)
-		IM_ASSERT(0);
+    if (result == D3DERR_INVALIDCALL)
+        IM_ASSERT(0);
 
-	ImGui_ImplDX9_CreateDeviceObjects();
+    ImGui_ImplDX9_CreateDeviceObjects();
 }
 
 void gui::DestroyDevice() noexcept
 {
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
+    if (device)
+    {
+        device->Release();
+        device = nullptr;
+    }
 
-	if (d3d)
-	{
-		d3d->Release();
-		d3d = nullptr;
-	}
+    if (d3d)
+    {
+        d3d->Release();
+        d3d = nullptr;
+    }
 }
 
 void gui::CreateImGui() noexcept
 {
-	IMGUI_CHECKVERSION();
-	ImGui::CreateContext();
-	ImGuiIO& io = ::ImGui::GetIO();
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ::ImGui::GetIO();
 
-	io.IniFilename = NULL;
+    io.IniFilename = NULL;
 
-	ImGui::StyleColorsDark();
+    ImGui::StyleColorsDark();
 
-	ImGui_ImplWin32_Init(window);
-	ImGui_ImplDX9_Init(device);
+    ImGui_ImplWin32_Init(window);
+    ImGui_ImplDX9_Init(device);
 }
 
 void gui::DestroyImGui() noexcept
 {
-	ImGui_ImplDX9_Shutdown();
-	ImGui_ImplWin32_Shutdown();
-	ImGui::DestroyContext();
+    ImGui_ImplDX9_Shutdown();
+    ImGui_ImplWin32_Shutdown();
+    ImGui::DestroyContext();
 }
 
 void gui::BeginRender() noexcept
 {
-	MSG message;
-	while (PeekMessage(&message, 0, 0, 0, PM_REMOVE))
-	{
-		TranslateMessage(&message);
-		DispatchMessage(&message);
+    MSG message;
+    while (PeekMessage(&message, 0, 0, 0, PM_REMOVE))
+    {
+        TranslateMessage(&message);
+        DispatchMessage(&message);
 
-		if (message.message == WM_QUIT)
-		{
-			isRunning = !isRunning;
-			return;
-		}
-	}
+        if (message.message == WM_QUIT)
+        {
+            isRunning = !isRunning;
+            return;
+        }
+    }
 
-	ImGui_ImplDX9_NewFrame();
-	ImGui_ImplWin32_NewFrame();
-	ImGui::NewFrame();
+    ImGui_ImplDX9_NewFrame();
+    ImGui_ImplWin32_NewFrame();
+    ImGui::NewFrame();
 }
 
 void gui::EndRender() noexcept
 {
-	ImGui::EndFrame();
+    ImGui::EndFrame();
 
-	device->SetRenderState(D3DRS_ZENABLE, FALSE);
-	device->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
-	device->SetRenderState(D3DRS_SCISSORTESTENABLE, FALSE);
+    device->SetRenderState(D3DRS_ZENABLE, FALSE);
+    device->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
+    device->SetRenderState(D3DRS_SCISSORTESTENABLE, FALSE);
 
-	device->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_RGBA(0, 0, 0, 255), 1.0f, 0);
+    device->Clear(0, 0, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER, D3DCOLOR_RGBA(0, 0, 0, 255), 1.0f, 0);
 
-	if (device->BeginScene() >= 0)
-	{
-		ImGui::Render();
-		ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
-		device->EndScene();
-	}
+    if (device->BeginScene() >= 0)
+    {
+        ImGui::Render();
+        ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
+        device->EndScene();
+    }
 
-	const auto result = device->Present(0, 0, 0, 0);
+    const auto result = device->Present(0, 0, 0, 0);
 
-	if (result == D3DERR_DEVICELOST && device->TestCooperativeLevel() == D3DERR_DEVICENOTRESET)
-		ResetDevice();
+    if (result == D3DERR_DEVICELOST && device->TestCooperativeLevel() == D3DERR_DEVICENOTRESET)
+        ResetDevice();
 }
 
 void gui::RenderTrainerTab() noexcept
 {
-	if (ImGui::Checkbox("GodMode##Checkbox", &isGodModeOn))
-	{
-		if (isGodModeOn)
-			cheat::godmodeon();
-		else
-			cheat::godmodeoff();
-	}
+    // God Mode
+    ImGui::PushStyleColor(ImGuiCol_Text, isGodModeOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255));
+    if (ImGui::Checkbox("God Mode", &isGodModeOn))
+    {
+        if (isGodModeOn)
+            cheat::godmodeon();
+        else
+            cheat::godmodeoff();
+    }
+    
+    ImGui::PopStyleColor();
 
-	if (ImGui::Checkbox("Infinite Nade##Checkbox", &isInfNadeOn))
-	{
-		if (isInfNadeOn)
-			cheat::infnadeon();
-		else
-			cheat::infnadeoff();
-	}
+    // Infinite Nade
+    ImGui::PushStyleColor(ImGuiCol_Text, isInfNadeOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255));
+    if (ImGui::Checkbox("Infinite Nade", &isInfNadeOn))
+    {
+        if (isInfNadeOn)
+            cheat::infnadeon();
+        else
+            cheat::infnadeoff();
+    }
+    
+    ImGui::PopStyleColor();
 
-	if (ImGui::Checkbox("Infinite Ammo##Checkbox", &isInfAmmoOn))
-	{
-		if (isInfAmmoOn)
-			cheat::infammoon();
+    // Infinite Ammo
+    ImGui::PushStyleColor(ImGuiCol_Text, isInfAmmoOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255));
+    if (ImGui::Checkbox("Infinite Ammo", &isInfAmmoOn))
+    {
+        if (isInfAmmoOn)
+            cheat::infammoon();
+        else
+            cheat::infammooff();
+    }
+    
+    ImGui::PopStyleColor();
 
-		else
-			cheat::infammooff();
-	}
+    // No Recoil
+    ImGui::PushStyleColor(ImGuiCol_Text, isNoRecoilOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255));
+    if (ImGui::Checkbox("No Recoil", &isNoRecoilOn))
+    {
+        if (isNoRecoilOn)
+            cheat::norecoilon();
+        else
+            cheat::norecoiloff();
+    }
+    
+    ImGui::PopStyleColor();
 
-	if (ImGui::Checkbox("No Recoil##Checkbox", &isNoRecoilOn))
-	{
-		if (isNoRecoilOn)
-			cheat::norecoilon();
-		else
-			cheat::norecoiloff();
-	}
+    // Rapid Fire
+    ImGui::PushStyleColor(ImGuiCol_Text, isRapidFireOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255));
+    if (ImGui::Checkbox("Rapid Fire", &isRapidFireOn))
+    {
+        if (isRapidFireOn)
+            cheat::rapidfireon();
+        else
+            cheat::rapidfireoff();
+    }
+    
+    ImGui::PopStyleColor();
 
-	if (ImGui::Checkbox("fire##Checkbox", &isRapidFireOn))
-	{
-		if (isRapidFireOn)
-			cheat::rapidfireon();
-		else
-			cheat::rapidfireoff();
-	}
+    // Infinite Armor
+    ImGui::PushStyleColor(ImGuiCol_Text, isArmorOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255));
+    if (ImGui::Checkbox("Infinite Armor", &isArmorOn))
+    {
+        if (isArmorOn)
+            cheat::armoron();
+        else
+            cheat::armoroff();
+    }
+    
+    ImGui::PopStyleColor();
 
-	if (ImGui::Checkbox("Infinite Armor##Checkbox", &isArmorOn))
-	{
-		if (isArmorOn)
-			cheat::armoron();
-		else
-			cheat::armoroff();
-	}
-
-	if (ImGui::Checkbox("Aimbot##Checkbox", &isAimBotOn))
-	{
-		if (isAimBotOn)
-			cheat::aimboton();
-		else
-			cheat::aimbotoff();
-	}
+    // Aimbot
+    ImGui::PushStyleColor(ImGuiCol_Text, isAimBotOn ? IM_COL32(0, 255, 0, 255) : IM_COL32(255, 0, 0, 255));
+    if (ImGui::Checkbox("Aimbot", &isAimBotOn))
+    {
+        if (isAimBotOn)
+            cheat::aimboton();
+        else
+            cheat::aimbotoff();
+    }
+    
+    ImGui::PopStyleColor();
 }
 
 void gui::RenderPlayerInfoTab() noexcept
 {
-	//Entity number
-	int entityCount = GetEntityNb();
-	ImGui::Text("Number of Entities: %d", entityCount);
+    //Entity number
+    int entityCount = GetEntityNb();
+    ImGui::Text("Number of Entities: %d", entityCount);
 
-	//Closest ennemy 
-	Vector3 closestEnemy = GetClosestEnemyPos();
-	ImGui::Text("Closest Enemy : (x : %.2f, y : %.2f, z : %.2f)", closestEnemy.x, closestEnemy.y, closestEnemy.z);
+    //Closest ennemy
+    Vector3 closestEnemy = GetClosestEnemyPos();
+    ImGui::Text("Closest Enemy : (x : %.2f, y : %.2f, z : %.2f)", closestEnemy.x, closestEnemy.y, closestEnemy.z);
 
-	//Entities info
-	std::vector<Entity> entities = GetEntitiesInfo();
-	std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
+    //Entities info
+    std::vector<Entity> entities = GetEntitiesInfo();
+    std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
 
-	ImGui::Begin("Entities Info");
+    ImGui::Begin("Entities Info");
 
-	if (entities.empty()) {
-		ImGui::Text("No entities found.");
-	}
-	else {
-		for (size_t i = 0; i < entities.size(); ++i) {
-			const auto& entity = entities[i];
+    if (entities.empty()) {
+        ImGui::Text("No entities found.");
+    }
+    else {
+        for (size_t i = 0; i < entities.size(); ++i) {
+            const auto& entity = entities[i];
 
-			ImGui::Text("Health: %d", entity.health);
-			ImGui::Text("Team: %d", entity.teamNumber);
-			ImGui::Text("Head Position: (%.2f, %.2f, %.2f)",
-				entity.headPosition.x, entity.headPosition.y, entity.headPosition.z);
+            ImGui::Text("Health: %d", entity.health);
+            ImGui::Text("Team: %d", entity.teamNumber);
+            ImGui::Text("Head Position: (%.2f, %.2f, %.2f)",
+                entity.headPosition.x, entity.headPosition.y, entity.headPosition.z);
 
-			if (i < entityOffsets.size()) {
-				ImGui::Text("Entity Offset: 0x%p", reinterpret_cast<void*>(entityOffsets[i]));
-			}
-			ImGui::NewLine();
-		}
-	}
+            if (i < entityOffsets.size()) {
+                ImGui::Text("Entity Offset: 0x%p", reinterpret_cast<void*>(entityOffsets[i]));
+            }
+            ImGui::NewLine();
+        }
+    }
 
-	ImGui::End();
+    ImGui::End();
 }
 
 void gui::Render() noexcept
 {
-	ImGui::SetNextWindowPos({ 0, 0 });
-	ImGui::SetNextWindowSize({ WIDTH, HEIGHT });
-	ImGui::Begin(
-		"Assault cube cheat menu",
-		&isRunning,
-		ImGuiWindowFlags_NoResize |
-		ImGuiWindowFlags_NoSavedSettings |
-		ImGuiWindowFlags_NoCollapse |
-		ImGuiWindowFlags_NoMove
-	);
+    ImGui::SetNextWindowPos({ 0, 0 });
+    ImGui::SetNextWindowSize({ WIDTH, HEIGHT });
+    ImGui::Begin(
+        "Assault cube cheat menu",
+        &isRunning,
+        ImGuiWindowFlags_NoResize |
+        ImGuiWindowFlags_NoSavedSettings |
+        ImGuiWindowFlags_NoCollapse |
+        ImGuiWindowFlags_NoMove
+    );
 
-	if (ImGui::BeginTabBar("##Onglets", ImGuiTabBarFlags_None))
-	{
-		if (ImGui::BeginTabItem("Trainer"))
-		{
-			RenderTrainerTab();
-			ImGui::EndTabItem();
-		}
+    if (ImGui::BeginTabBar("##Onglets", ImGuiTabBarFlags_None))
+    {
+        if (ImGui::BeginTabItem("Trainer"))
+        {
+            RenderTrainerTab();
+            ImGui::EndTabItem();
+        }
 
-		if (ImGui::BeginTabItem("EntitiesInfo"))
-		{
-			RenderPlayerInfoTab();
-			ImGui::EndTabItem();
-		}
+        if (ImGui::BeginTabItem("EntitiesInfo"))
+        {
+            RenderPlayerInfoTab();
+            ImGui::EndTabItem();
+        }
 
-		ImGui::EndTabBar();
-	}
+        ImGui::EndTabBar();
+    }
 
-	ImGui::End();
+    ImGui::End();
 }
