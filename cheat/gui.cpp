@@ -13,7 +13,7 @@ bool gui::isInfAmmoOn = false;
 bool gui::isArmorOn = false;
 bool gui::isNoRecoilOn = false;
 //bool gui::isGetInfoOn = false;
-bool gui::isESPOn = false;
+//bool gui::isESPOn = false;
 bool gui::isAimBotOn = false;
 int gui::updatedHealth = 0;
 int gui::updatedNade = 0;
@@ -295,10 +295,7 @@ void gui::RenderTrainerTab() noexcept
 		else
 			cheat::armoroff();
 	}
-}
 
-void gui::RenderAimbotTab() noexcept 
-{
 	if (ImGui::Checkbox("Aimbot##Checkbox", &isAimBotOn))
 	{
 		if (isAimBotOn)
@@ -308,17 +305,22 @@ void gui::RenderAimbotTab() noexcept
 	}
 }
 
+//void gui::RenderAimbotTab() noexcept 
+//{
+//	
+//}
 
-void gui::RenderESPTab() noexcept
-{
-	if (ImGui::Checkbox("Wallhack##Checkbox", &isESPOn))
-	{
-		if (isESPOn)
-			cheat::espon();
-		else
-			cheat::espoff();
-	}
-}
+
+//void gui::RenderESPTab() noexcept
+//{
+//	if (ImGui::Checkbox("Wallhack##Checkbox", &isESPOn))
+//	{
+//		if (isESPOn)
+//			cheat::espon();
+//		else
+//			cheat::espoff();
+//	}
+//}
 
 void gui::RenderPlayerInfoTab() noexcept
 {
@@ -379,17 +381,17 @@ void gui::Render() noexcept
 			ImGui::EndTabItem();
 		}
 
-		if (ImGui::BeginTabItem("Aimbot"))
+		/*if (ImGui::BeginTabItem("Aimbot"))
 		{
 			RenderAimbotTab();
 			ImGui::EndTabItem();
-		}
+		}*/
 
-		if (ImGui::BeginTabItem("ESP"))
+		/*if (ImGui::BeginTabItem("ESP"))
 		{
 			RenderESPTab();
 			ImGui::EndTabItem();
-		}
+		}*/
 
 		if (ImGui::BeginTabItem("EntitiesInfo"))
 		{

@@ -73,9 +73,9 @@ namespace gui
 	extern void aimbotoff() noexcept;
 	extern bool isAimBotOn;
 
-	extern void espon() noexcept;
+	/*extern void espon() noexcept;
 	extern void espoff() noexcept;
-	extern bool isESPOn;
+	extern bool isESPOn;*/
 
 	
 	//extern int headValue;

@@ -37,9 +37,9 @@ namespace cheat
 	extern bool isAimBotOn;
 
 
-	void espon() noexcept;
+	/*void espon() noexcept;
 	void espoff() noexcept;
-	extern bool isESPOn;
+	extern bool isESPOn;*/
 
 	//extern std::uintptr_t headPtr; // Pour stocker les pointeurs vers les têtes des ennemis
 	//extern std::uintptr_t entityL;
