@@ -324,7 +324,7 @@ void gui::RenderPlayerInfoTab() noexcept
 	//Closest ennemy 
 	Vector3 closestEnemy = GetClosestEnemyPos();
 	ImGui::Text("Closest Enemy : (x : %.2f, y : %.2f, z : %.2f)", closestEnemy.x, closestEnemy.y, closestEnemy.z);
-	
+
 	//Entities info
 	std::vector<Entity> entities = GetEntitiesInfo();
 	std::vector<std::uintptr_t> entityOffsets = EntitiesOffset();
@@ -385,4 +385,3 @@ void gui::Render() noexcept
 
 	ImGui::End();
 }
-
